@@ -23,3 +23,7 @@ Route::post('/register', 'HomeController@registerP')->name('register');
 
 Route::get('/forgotPassword', 'HomeController@forgotPassword')->name('forgotPassword');
 Route::post('/forgotPassword', 'HomeController@forgotPasswordP')->name('forgotPassword');
+
+//Social Login
+Route::get('/auth/{provider}', 'UserSocialController@redirectToProvider')->name('');
+Route::get('/auth/{provide}/callback', 'UserSocialController@handleProviderCallback')->name('');

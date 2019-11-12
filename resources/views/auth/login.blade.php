@@ -21,6 +21,14 @@
             </div>
             <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
+            <div class="form-group">
+                <a href="/auth/facebook" class="btn btn-block btn-social btn-facebook">
+                    <span class="fa fa-facebook"></span> Sign in with Facebook
+                </a>
+                <a href="/auth/google" class="btn btn-block btn-social btn-google">
+                    <span class="fa fa-google"></span> Sign in with Google
+                </a>
+            </div>
             <a href="/forgotPassword"><small>Forgot password?</small></a>
             <p class="text-muted text-center"><small>Do not have an account?</small></p>
             <a class="btn btn-sm btn-white btn-block" href="/register">Create an account</a>

@@ -26,6 +26,10 @@
             color: green;
             display: none;
         }
+
+        .avatar_image {
+            width: 5rem;
+        }
     </style>
     @yield('header')
 
@@ -42,7 +46,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
-                            <img alt="image" class="rounded-circle" src="{{asset('public/admin/img/profile_small.jpg')}}" />
+                            <img alt="image" class="rounded-circle avatar_image" src="{{$vsp_user->avatar_url}}" />
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="block m-t-xs font-bold">{{$vsp_user->name}}</span>
                                 <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
@@ -58,16 +62,15 @@
                         </div>
                     </li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
-                    </li>
-
                     <li class="active">
                         <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li><a href="#">404 Page</a></li>
                             <li class="active"><a href="#">Empty page</a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
                     </li>
 
                 </ul>

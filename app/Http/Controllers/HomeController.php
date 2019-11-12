@@ -10,11 +10,14 @@ class HomeController extends Controller
 {
     // public function __construct()
     // {
-    //     $this->middleware('auth');
+    //     // $this->middleware('auth');
     // }
 
     public function login()
     {
+        if (Auth::user()) {
+            return redirect('/admin');
+        }
         return view('auth.login');
     }
 
@@ -37,7 +40,8 @@ class HomeController extends Controller
         }
     }
 
-    public function logoutP(){
+    public function logoutP()
+    {
         Auth::logout();
         return response()->json([
             'redirect' => '/login',
@@ -46,6 +50,9 @@ class HomeController extends Controller
 
     public function register()
     {
+        if (Auth::user()) {
+            return redirect('/admin');
+        }
         return view('auth.register');
     }
 
@@ -72,6 +79,9 @@ class HomeController extends Controller
 
     public function forgotPassword()
     {
+        if (Auth::user()) {
+            return redirect('/admin');
+        }
         return view('auth.forgotPassword');
     }
     public function forgotPasswordP()

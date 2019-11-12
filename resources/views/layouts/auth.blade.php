@@ -9,6 +9,7 @@
     <link href="{{ asset('public/admin/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
     <link href="{{ asset('public/admin/css/plugins/iCheck/custom.css')}}" rel="stylesheet">
     <link href="{{ asset('public/admin/css/plugins/textSpinners/spinners.css')}}" rel="stylesheet">
+    <link href="{{ asset('public/admin/css/plugins/bootstrapSocial/bootstrap-social.css')}}" rel="stylesheet">
 
     <link href="{{ asset('public/admin/css/animate.css')}}" rel="stylesheet">
     <link href="{{ asset('public/admin/css/style.css')}}" rel="stylesheet">
