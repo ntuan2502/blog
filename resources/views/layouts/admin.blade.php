@@ -17,7 +17,9 @@
     <link href="{{ asset('public/admin/css/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css')}}" rel="stylesheet">
     <link href="{{ asset('public/admin/css/animate.css')}}" rel="stylesheet">
     <link href="{{ asset('public/admin/css/style.css')}}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
+    <link href="{{ asset('public/admin/css/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet">
+    <link href="{{ asset('public/admin/css/plugins/footable/footable.core.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <style>
@@ -38,6 +40,12 @@
         .timer {
             display: inline-block;
             font-weight: 700;
+        }
+
+        .preview_icon {
+            width: 10rem;
+            height: auto;
+            background-color: #2f4050;
         }
     </style>
     @yield('header')
@@ -71,17 +79,39 @@
                         </div>
                     </li>
 
-                    <li class="active">
+                    <li class="{{ (Route::currentRouteName() == 'admin' ? 'active' : '') }}">
                         <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="#">404 Page</a></li>
-                            <li class="active"><a href="#">Empty page</a></li>
+                            <li class="{{ (Route::currentRouteName() == 'admin' ? 'active' : '') }}">
+                                <a href="/admin">404 Page</a>
+                            </li>
+                            <li><a href="#">Empty page</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
+                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Theme</span></a>
                     </li>
-
+                    <li class="{{ (Route::currentRouteName() == 'class' ? 'active' : '') }}">
+                        <a href="/admin/class">
+                            <i class="fa fa-gear"></i>
+                            <span class="nav-label">Hệ phái</span>
+                            <span class="float-right label label-primary">SPECIAL</span>
+                        </a>
+                    </li>
+                    <li class="{{ (Route::currentRouteName() == 'category' ? 'active' : '') }}">
+                        <a href="/admin/category">
+                            <i class="fa fa-gear"></i>
+                            <span class="nav-label">Chuyên mục</span>
+                            <!-- <span class="float-right label label-primary">SPECIAL</span> -->
+                        </a>
+                    </li>
+                    <li class="{{ (Route::currentRouteName() == 'post' ? 'active' : '') }}">
+                        <a href="/admin/post">
+                            <i class="fa fa-gear"></i>
+                            <span class="nav-label">Bài viết</span>
+                            <!-- <span class="float-right label label-primary">SPECIAL</span> -->
+                        </a>
+                    </li>
                 </ul>
 
             </div>
@@ -244,13 +274,18 @@
     <script src="{{ asset('public/admin/js/plugins/flot/jquery.flot.pie.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/peity/jquery.peity.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/demo/peity-demo.js')}}"></script>
-    <script src="{{ asset('public/admin/js/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <!-- <script src="{{ asset('public/admin/js/plugins/jquery-ui/jquery-ui.min.js')}}"></script> -->
     <script src="{{ asset('public/admin/js/plugins/gritter/jquery.gritter.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/demo/sparkline-demo.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/chartJs/Chart.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/toastr/toastr.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
+    <script src="{{ asset('public/admin/js/plugins/footable/footable.all.min.js')}}"></script>
+    <script src="{{ asset('public/admin/js/plugins/sweetalert/sweetalert.min.js')}}"></script>
+    <script src="{{ asset('public/admin/js/plugins/select2/select2.full.min.js')}}"></script>
+    <script src="{{ asset('public/admin/js/plugins/summernote/summernote-bs4.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="{{ asset('public/link.js')}}"></script>
     <script>
         function makeTimer() {
@@ -296,6 +331,18 @@
                 }
             });
 
+            @if(session('success'))
+            setTimeout(function() {
+                toastr.options = {
+                    closeButton: true,
+                    progressBar: true,
+                    showMethod: 'slideDown',
+                    timeOut: 4000
+                };
+                toastr.success('{{session("success")}}', 'Thành công!');
+            }, 1300);
+            @endif
+
             $('.logout').click(function() {
                 $.ajax({
                     url: '/logout',
@@ -310,6 +357,8 @@
                 });
                 return false;
             });
+
+            $('.footable').footable();
 
             $('.i-checks').iCheck({
                 checkboxClass: 'icheckbox_square-green',

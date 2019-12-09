@@ -17,9 +17,7 @@ function xoa_dau(str) {
 }
 
 function xoa_space(str) {
-    // Gộp nhiều dấu space thành 1 space
     str = str.replace(/\s+/g, ' ');
-    // loại bỏ toàn bộ dấu space (nếu có) ở 2 đầu của xâu
     str.trim();
     return str;
 }
@@ -29,24 +27,44 @@ function converStrtToLink(str) {
     str = str.replace(/[^0-9a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ\s]/gi, '');
     str = xoa_space(str);
     str = str.toLowerCase(str);
-
     str = str.replace(/\s/g, '-');
-
     return str;
 }
 
-$('input[name=name]').keyup(function(e) {
-    var name = $(this).val();
+$('input[name=name]').keyup(function (e) {
+    var url = $(this).val();
+    url = converStrtToLink(url);
 
-    name = converStrtToLink(name);
-    var date = Date.now().toString();
-    date = date.substr(-3);
+    var now = new Date();
+    var days = now.getDate();
+    var months = now.getMonth() + 1;
+    var years = now.getFullYear();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    if (days < "10") {
+        days = "0" + days;
+    }
+    if (months < "10") {
+        months = "0" + months;
+    }
+    if (hours < "10") {
+        hours = "0" + hours;
+    }
+    if (minutes < "10") {
+        minutes = "0" + minutes;
+    }
+    if (seconds < "10") {
+        seconds = "0" + seconds;
+    }
 
-    link = name + '-' + date;
-
-    if (name != '') {
-        $('input[name=url]').val(link);
+    date = years + '' + months + '' + days;
+    slug = url + '-' + date;
+    if (url != '') {
+        $('input[name=url]').val(url);
+        $('input[name=slug]').val(slug);
     } else {
         $('input[name=url]').val('');
+        $('input[name=slug]').val('');
     }
 });
