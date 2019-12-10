@@ -53,9 +53,7 @@
 </head>
 
 <body class="">
-    <form id="logout" action="/logout" method="POST">
-        @csrf
-    </form>
+    @csrf
 
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">

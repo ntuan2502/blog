@@ -67,6 +67,9 @@ Route::group(['prefix' => 'login'], function () {
     Route::post('/', 'HomeController@loginP')->name('login');
 });
 
+Route::post('/page_login', 'HomeController@page_loginP');
+Route::post('/page_logout', 'HomeController@page_logoutP');
+
 Route::group(['prefix' => 'logout'], function () {
     Route::post('/', 'HomeController@logoutP')->name('logout');
 });

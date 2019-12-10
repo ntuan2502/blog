@@ -40,11 +40,39 @@ class HomeController extends Controller
         }
     }
 
+    public function page_loginP(Request $request)
+    {
+        $userdata = array(
+            'email'     => $request->email,
+            'password'  => $request->password
+        );
+
+        if (Auth::attempt($userdata) === false) {
+            return response()->json([
+                'status' => 0,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 1,
+                'redirect' => $request->url
+            ]);
+        }
+    }
+
+
     public function logoutP()
     {
         Auth::logout();
         return response()->json([
             'redirect' => '/login',
+        ]);
+    }
+
+    public function page_logoutP(Request $request)
+    {
+        Auth::logout();
+        return response()->json([
+            'redirect' => $request->url,
         ]);
     }
 
