@@ -9,6 +9,11 @@ use File;
 
 class ImageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function uploadImage(Request $request)
     {
         $url = Local::uploadRandom($request->image);

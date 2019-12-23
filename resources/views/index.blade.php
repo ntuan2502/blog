@@ -4,54 +4,253 @@
 @endsection
 @section('body')
 
-<!-- ##### Hero Area Start ##### -->
-<div class="hero-area">
+<!-- slider_area_start -->
+<div class="slider_area">
+    <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="slider_text text-center ">
+                        <h3>Musician </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- slider_area_end -->
+
+<!-- music_area  -->
+<div class="music_area">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-xl-12">
+                <div class="row align-items-center">
+                    <div class="col-xl-12 col-md-12">
+                        <div class="music_field">
+                            <div class="thumb">
+                                <img src="{{asset('public/homepage/img/music_man/1.png')}}" alt="">
+                            </div>
+                            <div class="audio_name">
+                                <div class="name">
+                                    <h4>Frando Kally</h4>
+                                    <p>10 November, 2019</p>
+                                </div>
+                                <audio preload="auto" controls>
+                                    <source src="https://vnso-zn-5-tf-mp3-s1-zmp3.zadn.vn/75421169342edd70843f/8958223993392556705?authen=exp=1577249938~acl=/75421169342edd70843f/*~hmac=5c9eea9a32acc6411f04b852af504bc7&filename=Dung-Lai-Day-Thoi-Hoa-Vinh.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-3 col-md-3">
+                        <div class="music_btn">
+                            <a href="#" class="boxed-btn">buy albam</a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- music_area end  -->
+
+<!-- about_area  -->
+<div class="about_area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-5 col-md-6">
+                <div class="about_thumb">
+                    <img class="img-fluid" src="{{asset('public/homepage/img/about/about_1.png')}}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-7 col-md-6">
+                <div class="about_info">
+                    <h3>Jack Kalib</h3>
+                    <p>Esteem spirit temper too say adieus who direct esteem. It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable projecting expression enim ad minim veniam quis nostrud exercitation we have supported programmes to help alleviate human suffering through animal welfare when people might depend.</p>
+                    <div class="signature">
+                        <img src="{{asset('public/homepage/img/about/signature.png')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ about_area  -->
+
+<!-- youtube_video_area  -->
+<div class="youtube_video_area">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single_video">
+                    <div class="thumb">
+                        <img src="{{asset('public/homepage/img/video/1.png')}}" alt="">
+                    </div>
+                    <div class="hover_elements">
+                        <div class="video">
+                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+
+                        <div class="hover_inner">
+                            <span>New York Show-2018</span>
+                            <h3><a href="#">Shadows of My Dream</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single_video">
+                    <div class="thumb">
+                        <img src="{{asset('public/homepage/img/video/2.png')}}" alt="">
+                    </div>
+                    <div class="hover_elements">
+                        <div class="video">
+                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+
+                        <div class="hover_inner">
+                            <span>New York Show-2018</span>
+                            <h3><a href="#">Shadows of My Dream</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single_video">
+                    <div class="thumb">
+                        <img src="{{asset('public/homepage/img/video/3.png')}}" alt="">
+                    </div>
+                    <div class="hover_elements">
+                        <div class="video">
+                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+
+                        <div class="hover_inner">
+                            <span>New York Show-2018</span>
+                            <h3><a href="#">Shadows of My Dream</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="single_video">
+                    <div class="thumb">
+                        <img src="{{asset('public/homepage/img/video/4.png')}}" alt="">
+                    </div>
+                    <div class="hover_elements">
+                        <div class="video">
+                            <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+
+                        <div class="hover_inner">
+                            <span>New York Show-2018</span>
+                            <h3><a href="#">Shadows of My Dream</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / youtube_video_area  -->
+
+<!-- music_area  -->
+<div class="music_area music_gallery">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="hero-slides owl-carousel">
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex align-items-center mb-50">
-                        <div class="post-thumb">
-                            <a href="#"><img src="{{asset('public/homepage/img/bg-img/1.jpg')}}" alt=""></a>
-                        </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Man Rescued Injured Bird, And Now He Probably Wishes He Hadn’t</h6>
-                            </a>
-                            <div class="post-meta">
-                                <p class="post-date"><a href="#">2 Days Ago</a></p>
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-65">
+                    <h3>Latest Tracks</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center mb-20">
+            <div class="col-xl-10">
+                <div class="row align-items-center">
+                    <div class="col-xl-9 col-md-9">
+                        <div class="music_field">
+                            <div class="thumb">
+                                <img src="{{asset('public/homepage/img/music_man/1.png')}}" alt="">
+                            </div>
+                            <div class="audio_name">
+                                <div class="name">
+                                    <h4>Frando Kally</h4>
+                                    <p>10 November, 2019</p>
+                                </div>
+                                <audio preload="auto" controls>
+                                    <source src="https://www.w3schools.com/html/horse.mp3">
+                                </audio>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex align-items-center mb-50">
-                        <div class="post-thumb">
-                            <a href="#"><img src="{{asset('public/homepage/img/bg-img/2.jpg')}}" alt=""></a>
+                    <div class="col-xl-3 col-md-3">
+                        <div class="music_btn">
+                            <a href="#" class="boxed-btn">buy albam</a>
                         </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>This 76-year-old Grandmother Lives Alone In Siberia And Skates</h6>
-                            </a>
-                            <div class="post-meta">
-                                <p class="post-date"><a href="#">3 Days Ago</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row align-items-center justify-content-center mb-20">
+            <div class="col-xl-10">
+                <div class="row align-items-center">
+                    <div class="col-xl-9 col-md-9">
+                        <div class="music_field">
+                            <div class="thumb">
+                                <img src="{{asset('public/homepage/img/music_man/2.png')}}" alt="">
+                            </div>
+                            <div class="audio_name">
+                                <div class="name">
+                                    <h4>Frando Kally</h4>
+                                    <p>10 November, 2019</p>
+                                </div>
+                                <audio preload="auto" controls>
+                                    <source src="https://www.w3schools.com/html/horse.mp3">
+                                </audio>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex align-items-center mb-50">
-                        <div class="post-thumb">
-                            <a href="#"><img src="{{asset('public/homepage/img/bg-img/3.jpg')}}" alt=""></a>
+                    <div class="col-xl-3 col-md-3">
+                        <div class="music_btn">
+                            <a href="#" class="boxed-btn">buy albam</a>
                         </div>
-                        <div class="post-data">
-                            <a href="#" class="post-title">
-                                <h6>Mother Saves Her Daughter During A Talent Show, And Now Everyone Is Crying</h6>
-                            </a>
-                            <div class="post-meta">
-                                <p class="post-date"><a href="#">2 Days Ago</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row align-items-center justify-content-center mb-20">
+            <div class="col-xl-10">
+                <div class="row align-items-center">
+                    <div class="col-xl-9 col-md-9">
+                        <div class="music_field">
+                            <div class="thumb">
+                                <img src="{{asset('public/homepage/img/music_man/3.png')}}" alt="">
                             </div>
+                            <div class="audio_name">
+                                <div class="name">
+                                    <h4>Frando Kally</h4>
+                                    <p>10 November, 2019</p>
+                                </div>
+                                <audio preload="auto" controls>
+                                    <source src="https://www.w3schools.com/html/horse.mp3">
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-3">
+                        <div class="music_btn">
+                            <a href="#" class="boxed-btn">buy albam</a>
                         </div>
                     </div>
                 </div>
@@ -60,427 +259,99 @@
         </div>
     </div>
 </div>
-<!-- ##### Hero Area End ##### -->
+<!-- music_area end  -->
 
-<!-- ##### Welcome Slide Area Start ##### -->
-<div class="welcome-slide-area">
+<!-- gallery -->
+<div class="gallery_area">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="welcome-slides owl-carousel">
-
-                    <!-- Single Welcome Slide -->
-                    <div class="single-welcome-slide">
-                        <div class="row no-gutters">
-                            <div class="col-12 col-lg-8">
-                                <!-- Welcome Post -->
-                                <div class="welcome-post">
-                                    <img src="{{asset('public/homepage/img/bg-img/bg1.jpg')}}" alt="">
-                                    <div class="post-content" data-animation="fadeInUp" data-duration="500ms">
-                                        <a href="#" class="tag">Travel</a>
-                                        <a href="#" class="post-title">10 Tips to travel in style for less</a>
-                                        <p>1 day ago</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-lg-4">
-                                <div class="welcome-posts--">
-                                    <!-- Welcome Post -->
-                                    <div class="welcome-post style-2">
-                                        <img src="{{asset('public/homepage/img/bg-img/bg2.jpg')}}" alt="">
-                                        <div class="post-content" data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">
-                                            <a href="#" class="tag tag-2">Celebs</a>
-                                            <a href="#" class="post-title">Superstar spoted with new boyfriend</a>
-                                            <p>1 day ago</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Welcome Post -->
-                                    <div class="welcome-post style-2">
-                                        <img src="{{asset('public/homepage/img/bg-img/bg3.jpg')}}" alt="">
-                                        <div class="post-content" data-animation="fadeInUp" data-delay="750ms" data-duration="500ms">
-                                            <a href="#" class="tag tag-3">4 Fun</a>
-                                            <a href="#" class="post-title">Festival looks for all the party people</a>
-                                            <p>1 day ago</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-65">
+                    <h3>Image Galleries</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row grid">
+            <div class="col-xl-5 col-lg-5 grid-item cat1 col-md-6">
+                <div class="single-gallery mb-30">
+                    <div class="portfolio-img">
+                        <img src="{{asset('public/homepage/img/gallery/1.png')}}" alt="">
                     </div>
-
-
-                    <!-- Single Welcome Slide -->
-                    <div class="single-welcome-slide">
-                        <div class="row no-gutters">
-                            <div class="col-12 col-lg-8">
-                                <!-- Welcome Post -->
-                                <div class="welcome-post">
-                                    <img src="{{asset('public/homepage/img/bg-img/bg1.jpg')}}" alt="">
-                                    <div class="post-content" data-animation="fadeInUp" data-duration="500ms">
-                                        <a href="#" class="tag">Travel</a>
-                                        <a href="#" class="post-title">10 Tips to travel in style for less</a>
-                                        <p>1 day ago</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-lg-4">
-                                <div class="welcome-posts--">
-                                    <!-- Welcome Post -->
-                                    <div class="welcome-post style-2">
-                                        <img src="{{asset('public/homepage/img/bg-img/bg2.jpg')}}" alt="">
-                                        <div class="post-content" data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">
-                                            <a href="#" class="tag tag-2">Celebs</a>
-                                            <a href="#" class="post-title">Superstar spoted with new boyfriend</a>
-                                            <p>1 day ago</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Welcome Post -->
-                                    <div class="welcome-post style-2">
-                                        <img src="{{asset('public/homepage/img/bg-img/bg3.jpg')}}" alt="">
-                                        <div class="post-content" data-animation="fadeInUp" data-delay="750ms" data-duration="500ms">
-                                            <a href="#" class="tag tag-3">4 Fun</a>
-                                            <a href="#" class="post-title">Festival looks for all the party people</a>
-                                            <p>1 day ago</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="gallery_hover">
+                        <a class="popup-image" href="{{asset('public/homepage/img/gallery/1.png')}}" class="hover_inner">
+                            <i class="ti-plus"></i>
+                        </a>
                     </div>
-
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 grid-item cat3 cat4 col-md-6">
+                <div class="single-gallery mb-30">
+                    <div class="portfolio-img">
+                        <img src="{{asset('public/homepage/img/gallery/2.png')}}" alt="">
+                    </div>
+                    <div class="gallery_hover">
+                        <a class="popup-image" href="{{asset('public/homepage/img/gallery/2.png')}}" class="hover_inner">
+                            <i class="ti-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 grid-item cat4 col-md-6">
+                <div class="single-gallery mb-30">
+                    <div class="portfolio-img">
+                        <img src="{{asset('public/homepage/img/gallery/3.png')}}" alt="">
+                    </div>
+                    <div class="gallery_hover">
+                        <a class="popup-image" href="{{asset('public/homepage/img/gallery/3.png')}}" class="hover_inner">
+                            <i class="ti-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 grid-item cat2 col-md-6">
+                <div class="single-gallery mb-30">
+                    <div class="portfolio-img">
+                        <img src="{{asset('public/homepage/img/gallery/4.png')}}" alt="">
+                    </div>
+                    <div class="gallery_hover">
+                        <a class="popup-image" href="{{asset('public/homepage/img/gallery/4.png')}}" class="hover_inner">
+                            <i class="ti-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 grid-item cat2 col-md-6">
+                <div class="single-gallery mb-30">
+                    <div class="portfolio-img">
+                        <img src="{{asset('public/homepage/img/gallery/5.png')}}" alt="">
+                    </div>
+                    <div class="gallery_hover">
+                        <a class="popup-image" href="{{asset('public/homepage/img/gallery/5.png')}}" class="hover_inner">
+                            <i class="ti-plus"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ##### Welcome Slide Area End ##### -->
+<!--/ gallery -->
 
-<!-- ##### Blog Post Area Start ##### -->
-<div class="viral-story-blog-post section-padding-0-50">
+<!-- contact_rsvp -->
+<div class="contact_rsvp">
     <div class="container">
         <div class="row">
-            <!-- Blog Posts Area -->
-            <div class="col-12 col-lg-8">
-                <div class="row">
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/7.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/8.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory cat-3">4 Fun</a>
-                                <a href="#" class="post-title">
-                                    <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/9.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/10.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory cat-3">4 Fun</a>
-                                <a href="#" class="post-title">
-                                    <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/11.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory cat-2">Travel</a>
-                                <a href="#" class="post-title">
-                                    <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/12.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory cat-4">featured</a>
-                                <a href="#" class="post-title">
-                                    <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/13.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory">Finance</a>
-                                <a href="#" class="post-title">
-                                    <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post style-3">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/14.jpg')}}" alt=""></a>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-catagory cat-3">4 Fun</a>
-                                <a href="#" class="post-title">
-                                    <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    <p class="post-date">5 Hours Ago</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="viral-news-pagination">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">01</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">04</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">05</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">15</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sidebar Area -->
-            <div class="col-12 col-lg-4">
-                <div class="sidebar-area">
-
-                    <!-- Newsletter Widget -->
-                    <div class="newsletter-widget mb-70">
-                        <h4>Sign up to <br>our newsletter</h4>
-                        <form action="#" method="post">
-                            <input type="text" name="text" placeholder="Name">
-                            <input type="email" name="email" placeholder="Email">
-                            <button type="submit" class="btn w-100">Subscribe</button>
-                        </form>
-                    </div>
-
-                    <!-- Trending Articles Widget -->
-                    <div class="treading-articles-widget mb-70">
-                        <h4>Trending Articles</h4>
-
-                        <!-- Single Trending Articles -->
-                        <div class="single-blog-post style-4">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/15.jpg')}}" alt=""></a>
-                                <span class="serial-number">01.</span>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-title">
-                                    <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Trending Articles -->
-                        <div class="single-blog-post style-4">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/16.jpg')}}" alt=""></a>
-                                <span class="serial-number">02.</span>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-title">
-                                    <h6>Artist Recreates People’s Childhood Memories With Realistic Dioramas</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Trending Articles -->
-                        <div class="single-blog-post style-4">
-                            <!-- Post Thumb -->
-                            <div class="post-thumb">
-                                <a href="#"><img src="{{asset('public/homepage/img/bg-img/17.jpg')}}" alt=""></a>
-                                <span class="serial-number">03.</span>
-                            </div>
-                            <!-- Post Data -->
-                            <div class="post-data">
-                                <a href="#" class="post-title">
-                                    <h6>Artist Recreates People’s Childhood Memories With Realistic Dioramas</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Add Widget -->
-                    <div class="add-widget mb-70">
-                        <a href="#"><img src="{{asset('public/homepage/img/bg-img/add.png')}}" alt=""></a>
-                    </div>
-
-                    <!-- Latest Comments -->
-                    <div class="latest-comments-widget">
-                        <h4>Latest Comments</h4>
-
-                        <!-- Single Comment Widget -->
-                        <div class="single-comments d-flex">
-                            <div class="comments-thumbnail">
-                                <img src="{{asset('public/homepage/img/bg-img/t1.jpg')}}" alt="">
-                            </div>
-                            <div class="comments-text">
-                                <a href="#"><span>Jamie Smith</span> on Facebook is offering facial recognition...</a>
-                                <p>06:34 am, April 14, 2018</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Comment Widget -->
-                        <div class="single-comments d-flex">
-                            <div class="comments-thumbnail">
-                                <img src="{{asset('public/homepage/img/bg-img/t2.jpg')}}" alt="">
-                            </div>
-                            <div class="comments-text">
-                                <a href="#"><span>Tania Heffner</span> on Facebook is offering facial recognition...</a>
-                                <p>06:34 am, April 14, 2018</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Comment Widget -->
-                        <div class="single-comments d-flex">
-                            <div class="comments-thumbnail">
-                                <img src="{{asset('public/homepage/img/bg-img/t3.jpg')}}" alt="">
-                            </div>
-                            <div class="comments-text">
-                                <a href="#"><span>Sandy Doe</span> on Facebook is offering facial recognition...</a>
-                                <p>06:34 am, April 14, 2018</p>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="col-xl-12">
+                <div class="text text-center">
+                    <h3>Contact For RSVP</h3>
+                    <a class="boxed-btn3" href="contact.html">Contact Me</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- ##### Blog Post Area End ##### -->
+<!--/ contact_rsvp -->
+
 @endsection
 @section('footer')
 

@@ -1,450 +1,262 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Musico</title>
     <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Title -->
-    <title>Viral Story - Viral News Magazine Template</title>
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- Place favicon.ico in the root directory -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="top-header-content d-flex align-items-center justify-content-between">
-                            <!-- Breaking News Area -->
-                            <div class="top-breaking-news-area">
-                                <div id="breakingNewsTicker" class="ticker">
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="index.html">home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="track.html">tracks</a></li>
+                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">blog</a></li>
+                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                     <li><a href="elements.html">elements</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="social_icon text-right">
                                     <ul>
-                                        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                        <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                        <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
+                                        <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
                                     </ul>
                                 </div>
                             </div>
-
-                            <!-- Social Info Area-->
-                            <div class="top-social-info-area">
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Navbar Area -->
-        <div class="viral-news-main-menu" id="stickyMenu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="viralnewsNav">
-
-                        <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li class="active"><a href="catagory.html">Top 10</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="catagory.html">Catagories</a></li>
-                                            <li><a href="single-post.html">Single Article</a></li>
-                                            <li><a href="quize-article.html">Quize Article</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="catagory.html">Catagories</a></li>
-                                                    <li><a href="single-post.html">Single Article</a></li>
-                                                    <li><a href="quize-article.html">Quize Article</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="index.html">Funny</a></li>
-                                    <li><a href="index.html">Videos</a></li>
-                                    <li><a href="index.html">Don’t Miss</a></li>
-                                    <li><a href="#">Mega Menu</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                <!-- Search Button -->
-                                <div class="search-btn">
-                                    <i id="searchbtn" class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-
-                                <!-- Search Form -->
-                                <div class="viral-search-form">
-                                    <form id="search" action="#" method="get">
-                                        <input type="text" name="search-terms" placeholder="Enter your keywords ...">
-                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </form>
-                                </div>
-
-                                <!-- Video Post Button -->
-                                <div class="add-post-button">
-                                    <a href="#" class="btn add-post-btn">Add Post</a>
-                                </div>
-
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ##### Header Area End ##### -->
+    <!-- header-end -->
 
-    <!-- ##### Viral News Breadcumb Area Start ##### -->
-    <div class="viral-news-breadcumb-area section-padding-50">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-
-                <!-- Breadcumb Area -->
-                <div class="col-12 col-md-4">
-                    <h3>Contact</h3>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                        </ol>
-                    </nav>
-                </div>
-
-                <!-- Add Widget -->
-                <div class="col-12 col-md-8">
-                    <div class="add-widget">
-                        <a href="#"><img src="img/bg-img/add2.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Viral News Breadcumb Area End ##### -->
-
-    <!-- ##### Contact Form Area Start ##### -->
-    <div class="contact-area section-padding-100">
+    <!-- bradcam_area  -->
+    <div class="bradcam_area breadcam_bg_2">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-8">
-                    <!-- Contact Title -->
-                    <div class="contact-title">
-                        <h4>Get in touch</h4>
-                    </div>
-
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area mb-70">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <input type="text" class="form-control" id="name" placeholder="Name">
-                                </div>
-                                <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn viral-btn mt-30" type="submit">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Contact Info -->
-                    <div class="contact-title">
-                        <h4>Contact Info</h4>
-                    </div>
-
-                    <div class="contact-info-details d-flex mb-100">
-                        <!-- Single Contact Information -->
-                        <div class="single-contact">
-                            <h6 class="mb-70">Marketing</h6>
-                            <div class="single-contact-information">
-                                <h6>Address:</h6>
-                                <p>481 Creekside Lane Avila <br>Beach, CA 93424</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Contact Information -->
-                        <div class="single-contact">
-                            <h6 class="mb-70">Editors</h6>
-                            <div class="single-contact-information">
-                                <h6>Phone:</h6>
-                                <p>+53 345 7953 32453 <br>+53 345 7557 822112</p>
-                            </div>
-                        </div>
-
-                        <!-- Single Contact Information -->
-                        <div class="single-contact">
-                            <h6 class="mb-70">Main Office</h6>
-                            <div class="single-contact-information">
-                                <h6>Email:</h6>
-                                <p>yourmail@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Google Maps Iframe -->
-                    <div class="google-maps">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d299449.62596270425!2d-118.5394683879778!3d33.98014598121335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos+Angeles%2C+CA%2C+USA!5e0!3m2!1sen!2sbd!4v1531177364338" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- Blog Sidebar Area -->
-                <div class="col-12 col-lg-4">
-
-                    <div class="blog-sidebar-area">
-
-                        <!-- Newsletter Widget -->
-                        <div class="newsletter-widget mb-70">
-                            <h4>Sign up to <br>our newsletter</h4>
-                            <form action="#" method="post">
-                                <input type="text" name="text" placeholder="Name">
-                                <input type="email" name="email" placeholder="Email">
-                                <button type="submit" class="btn w-100">Subscribe</button>
-                            </form>
-                        </div>
-
-                        <!-- Trending Articles Widget -->
-                        <div class="treading-articles-widget mb-70">
-                            <h4>Trending Articles</h4>
-
-                            <!-- Single Trending Articles -->
-                            <div class="single-blog-post style-4">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/15.jpg" alt=""></a>
-                                    <span class="serial-number">01.</span>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Trending Articles -->
-                            <div class="single-blog-post style-4">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
-                                    <span class="serial-number">02.</span>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Artist Recreates People’s Childhood Memories With Realistic Dioramas</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Trending Articles -->
-                            <div class="single-blog-post style-4">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
-                                    <span class="serial-number">03.</span>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Artist Recreates People’s Childhood Memories With Realistic Dioramas</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Add Widget -->
-                        <div class="add-widget">
-                            <a href="#"><img src="img/bg-img/add.png" alt=""></a>
-                        </div>
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>contact</h3>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ##### Contact Form Area End ##### -->
+    <!--/ bradcam_area  -->
+  <!-- ================ contact section start ================= -->
+  <section class="contact-section section_padding">
+    <div class="container">
+      <div class="d-none d-sm-block mb-5 pb-4">
+        <div id="map" style="height: 480px;"></div>
+        <script>
+          function initMap() {
+            var uluru = {lat: -25.363, lng: 131.044};
+            var grayStyles = [
+              {
+                featureType: "all",
+                stylers: [
+                  { saturation: -90 },
+                  { lightness: 50 }
+                ]
+              },
+              {elementType: 'labels.text.fill', stylers: [{color: '#ccdee9'}]}
+            ];
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -31.197, lng: 150.744},
+              zoom: 9,
+              styles: grayStyles,
+              scrollwheel:  false
+            });
+          }
+          
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+        
+      </div>
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
 
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="contact-title">Get in Touch</h2>
+        </div>
+        <div class="col-lg-8">
+          <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  
+                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder = 'Enter Message'></textarea>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Enter your name'>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder = 'Enter email address'>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Enter Subject'>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <button type="submit" class="button button-contactForm btn_4 boxed-btn">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4">
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>Buttonwood, California.</h3>
+              <p>Rosemead, CA 91770</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+              <h3>00 (440) 9865 562</h3>
+              <p>Mon to Fri 9am to 6pm</p>
+            </div>
+          </div>
+          <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+              <h3>support@colorlib.com</h3>
+              <p>Send us your query anytime!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================ contact section end ================= -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
             <div class="container">
                 <div class="row">
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="footer-widget-area">
-                            <!-- Footer Logo -->
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-                            </div>
-                            <!-- Footer Nav -->
-                            <div class="footer-nav">
+                    <div class="col-xl-6 col-md-6">
+                            <div class="footer_widget">
+                                    <h3 class="footer_title">
+                                            Services
+                                    </h3>
+                                <div class="subscribe-from">
+                                        <form action="#">
+                                                <input type="text" placeholder="Enter your mail">
+                                                <button type="submit" >Subscribe</button>
+                                            </form>
+                                </div>
+                                <p class="sub_text">Esteem spirit temper too say adieus who direct esteem esteems luckily.</p>
+                                </div>
+                    </div>
+                    <div class="col-xl-5 col-md-5 offset-xl-1">
+                        <div class="footer_widget">
+                                <h3 class="footer_title">
+                                        Contact Me
+                                </h3>
+                            <ul>
+                                <li><a href="#">conbusi@support.com
+                                    </a></li>
+                                <li><a href="#">+10 873 672 6782
+                                    </a></li>
+                                <li><a href="#">600/D, Green road, Kings Garden NewYork-6732</a></li>
+                            </ul>
+                            <div class="socail_links">
                                 <ul>
-                                    <li class="active"><a href="#">Top 10</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Funny</a></li>
-                                    <li><a href="#">Advertising</a></li>
-                                    <li><a href="#">Celebs</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Videos</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Features</a></li>
-                                    <li><a href="#">Submit a video</a></li>
-                                    <li><a href="#">Don’tMiss</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class=" fa fa-facebook "></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Newsletter Widget -->
-                        <div class="newsletter-widget">
-                            <h4>Sign up to <br>our newsletter</h4>
-                            <form action="#" method="post">
-                                <input type="text" name="text" placeholder="Name">
-                                <input type="email" name="email" placeholder="Email">
-                                <button type="submit" class="btn w-100">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="footer-widget-area">
-                            <!-- Widget Title -->
-                            <h4 class="widget-title">Latest articles</h4>
-
-                            <!-- Single Latest Post -->
-                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/4.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Latest Post -->
-                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/5.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Sed a elit euismod augue semper congue sit amet ac.</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Latest Post -->
-                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/6.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -452,34 +264,63 @@
                 </div>
             </div>
         </div>
-
-        <!-- Bottom Footer Area -->
-        <div class="bottom-footer-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Copywrite -->
-                        <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-7 col-md-6">
+                        <p class="copy_right">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-xl-5 col-md-6">
+                        <div class="footer_links">
+                            <ul>
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">tracks</a></li>
+                                <li><a href="#">blog</a></li>
+                                <li><a href="#">contact</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
+    <!--/ footer end  -->
 
-    <!-- ##### All Javascript Files ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+
+  <!-- JS here -->
+  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/ajax-form.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/scrollIt.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/nice-select.min.js"></script>
+  <script src="js/jquery.slicknav.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/gijgo.min.js"></script>
+
+  <!--contact js-->
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

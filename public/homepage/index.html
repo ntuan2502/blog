@@ -1,742 +1,504 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Musico</title>
     <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Title -->
-    <title>Viral Story - Viral News Magazine Template</title>
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Core Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/audioplayer.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
 
 <body>
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
 
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="top-header-content d-flex align-items-center justify-content-between">
-                            <!-- Breaking News Area -->
-                            <div class="top-breaking-news-area">
-                                <div id="breakingNewsTicker" class="ticker">
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="img/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="index.html">home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="track.html">tracks</a></li>
+                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">blog</a></li>
+                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                     <li><a href="elements.html">elements</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                <div class="social_icon text-right">
                                     <ul>
-                                        <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-                                        <li><a href="#">Welcome to Colorlib Family.</a></li>
-                                        <li><a href="#">Nam eu metus sitsit amet, consec!</a></li>
+                                        <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                        <li><a href="#"> <i class="fa fa-instagram"></i> </a></li>
                                     </ul>
                                 </div>
                             </div>
-
-                            <!-- Social Info Area-->
-                            <div class="top-social-info-area">
-                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Navbar Area -->
-        <div class="viral-news-main-menu" id="stickyMenu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="viralnewsNav">
-
-                        <!-- Logo -->
-                        <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul>
-                                    <li class="active"><a href="catagory.html">Top 10</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home</a></li>
-                                            <li><a href="catagory.html">Catagories</a></li>
-                                            <li><a href="single-post.html">Single Article</a></li>
-                                            <li><a href="quize-article.html">Quize Article</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="#">Dropdown</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="index.html">Home</a></li>
-                                                    <li><a href="catagory.html">Catagories</a></li>
-                                                    <li><a href="single-post.html">Single Article</a></li>
-                                                    <li><a href="quize-article.html">Quize Article</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="index.html">Funny</a></li>
-                                    <li><a href="index.html">Videos</a></li>
-                                    <li><a href="index.html">Don’t Miss</a></li>
-                                    <li><a href="#">Mega Menu</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">Home</a></li>
-                                                <li><a href="catagory.html">Catagories</a></li>
-                                                <li><a href="single-post.html">Single Article</a></li>
-                                                <li><a href="quize-article.html">Quize Article</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                <!-- Search Button -->
-                                <div class="search-btn">
-                                    <i id="searchbtn" class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-
-                                <!-- Search Form -->
-                                <div class="viral-search-form">
-                                    <form id="search" action="#" method="get">
-                                        <input type="text" name="search-terms" placeholder="Enter your keywords ...">
-                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </form>
-                                </div>
-
-                                <!-- Video Post Button -->
-                                <div class="add-post-button">
-                                    <a href="#" class="btn add-post-btn">Add Post</a>
-                                </div>
-
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ##### Header Area End ##### -->
+    <!-- header-end -->
 
-    <!-- ##### Hero Area Start ##### -->
-    <div class="hero-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="hero-slides owl-carousel">
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex align-items-center mb-50">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/1.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-title">
-                                    <h6>Man Rescued Injured Bird, And Now He Probably Wishes He Hadn’t</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date"><a href="#">2 Days Ago</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex align-items-center mb-50">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/2.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-title">
-                                    <h6>This 76-year-old Grandmother Lives Alone In Siberia And Skates</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date"><a href="#">3 Days Ago</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex align-items-center mb-50">
-                            <div class="post-thumb">
-                                <a href="#"><img src="img/bg-img/3.jpg" alt=""></a>
-                            </div>
-                            <div class="post-data">
-                                <a href="#" class="post-title">
-                                    <h6>Mother Saves Her Daughter During A Talent Show, And Now Everyone Is Crying</h6>
-                                </a>
-                                <div class="post-meta">
-                                    <p class="post-date"><a href="#">2 Days Ago</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- ##### Hero Area End ##### -->
-
-    <!-- ##### Welcome Slide Area Start ##### -->
-    <div class="welcome-slide-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="welcome-slides owl-carousel">
-
-                        <!-- Single Welcome Slide -->
-                        <div class="single-welcome-slide">
-                            <div class="row no-gutters">
-                                <div class="col-12 col-lg-8">
-                                    <!-- Welcome Post -->
-                                    <div class="welcome-post">
-                                        <img src="img/bg-img/bg1.jpg" alt="">
-                                        <div class="post-content" data-animation="fadeInUp" data-duration="500ms">
-                                            <a href="#" class="tag">Travel</a>
-                                            <a href="#" class="post-title">10 Tips to travel in style for less</a>
-                                            <p>1 day ago</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-4">
-                                    <div class="welcome-posts--">
-                                        <!-- Welcome Post -->
-                                        <div class="welcome-post style-2">
-                                            <img src="img/bg-img/bg2.jpg" alt="">
-                                            <div class="post-content" data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">
-                                                <a href="#" class="tag tag-2">Celebs</a>
-                                                <a href="#" class="post-title">Superstar spoted with new boyfriend</a>
-                                                <p>1 day ago</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Welcome Post -->
-                                        <div class="welcome-post style-2">
-                                            <img src="img/bg-img/bg3.jpg" alt="">
-                                            <div class="post-content" data-animation="fadeInUp" data-delay="750ms" data-duration="500ms">
-                                                <a href="#" class="tag tag-3">4 Fun</a>
-                                                <a href="#" class="post-title">Festival looks for all the party people</a>
-                                                <p>1 day ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Single Welcome Slide -->
-                        <div class="single-welcome-slide">
-                            <div class="row no-gutters">
-                                <div class="col-12 col-lg-8">
-                                    <!-- Welcome Post -->
-                                    <div class="welcome-post">
-                                        <img src="img/bg-img/bg1.jpg" alt="">
-                                        <div class="post-content" data-animation="fadeInUp" data-duration="500ms">
-                                            <a href="#" class="tag">Travel</a>
-                                            <a href="#" class="post-title">10 Tips to travel in style for less</a>
-                                            <p>1 day ago</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-lg-4">
-                                    <div class="welcome-posts--">
-                                        <!-- Welcome Post -->
-                                        <div class="welcome-post style-2">
-                                            <img src="img/bg-img/bg2.jpg" alt="">
-                                            <div class="post-content" data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">
-                                                <a href="#" class="tag tag-2">Celebs</a>
-                                                <a href="#" class="post-title">Superstar spoted with new boyfriend</a>
-                                                <p>1 day ago</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Welcome Post -->
-                                        <div class="welcome-post style-2">
-                                            <img src="img/bg-img/bg3.jpg" alt="">
-                                            <div class="post-content" data-animation="fadeInUp" data-delay="750ms" data-duration="500ms">
-                                                <a href="#" class="tag tag-3">4 Fun</a>
-                                                <a href="#" class="post-title">Festival looks for all the party people</a>
-                                                <p>1 day ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Welcome Slide Area End ##### -->
-
-    <!-- ##### Blog Post Area Start ##### -->
-    <div class="viral-story-blog-post section-padding-0-50">
-        <div class="container">
-            <div class="row">
-                <!-- Blog Posts Area -->
-                <div class="col-12 col-lg-8">
-                    <div class="row">
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/7.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
-                                    <a href="#" class="post-title">
-                                        <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/8.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory cat-3">4 Fun</a>
-                                    <a href="#" class="post-title">
-                                        <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/9.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
-                                    <a href="#" class="post-title">
-                                        <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/10.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory cat-3">4 Fun</a>
-                                    <a href="#" class="post-title">
-                                        <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/11.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory cat-2">Travel</a>
-                                    <a href="#" class="post-title">
-                                        <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory cat-4">featured</a>
-                                    <a href="#" class="post-title">
-                                        <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/13.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory">Finance</a>
-                                    <a href="#" class="post-title">
-                                        <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="col-12 col-lg-6">
-                            <div class="single-blog-post style-3">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/14.jpg" alt=""></a>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-catagory cat-3">4 Fun</a>
-                                    <a href="#" class="post-title">
-                                        <h6>10 Tips on how to have the best pool party on a small budget</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                        <p class="post-date">5 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="viral-news-pagination">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">01</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">04</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">05</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">15</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sidebar Area -->
-                <div class="col-12 col-lg-4">
-                    <div class="sidebar-area">
-
-                        <!-- Newsletter Widget -->
-                        <div class="newsletter-widget mb-70">
-                            <h4>Sign up to <br>our newsletter</h4>
-                            <form action="#" method="post">
-                                <input type="text" name="text" placeholder="Name">
-                                <input type="email" name="email" placeholder="Email">
-                                <button type="submit" class="btn w-100">Subscribe</button>
-                            </form>
-                        </div>
-
-                        <!-- Trending Articles Widget -->
-                        <div class="treading-articles-widget mb-70">
-                            <h4>Trending Articles</h4>
-
-                            <!-- Single Trending Articles -->
-                            <div class="single-blog-post style-4">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/15.jpg" alt=""></a>
-                                    <span class="serial-number">01.</span>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>This Is How Notebooks Of An Artist Who Travels Around The World Look</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Trending Articles -->
-                            <div class="single-blog-post style-4">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
-                                    <span class="serial-number">02.</span>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Artist Recreates People’s Childhood Memories With Realistic Dioramas</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Trending Articles -->
-                            <div class="single-blog-post style-4">
-                                <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
-                                    <span class="serial-number">03.</span>
-                                </div>
-                                <!-- Post Data -->
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Artist Recreates People’s Childhood Memories With Realistic Dioramas</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Add Widget -->
-                        <div class="add-widget mb-70">
-                            <a href="#"><img src="img/bg-img/add.png" alt=""></a>
-                        </div>
-
-                        <!-- Latest Comments -->
-                        <div class="latest-comments-widget">
-                            <h4>Latest Comments</h4>
-
-                            <!-- Single Comment Widget -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail">
-                                    <img src="img/bg-img/t1.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#"><span>Jamie Smith</span> on Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comment Widget -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail">
-                                    <img src="img/bg-img/t2.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#"><span>Tania Heffner</span> on Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Comment Widget -->
-                            <div class="single-comments d-flex">
-                                <div class="comments-thumbnail">
-                                    <img src="img/bg-img/t3.jpg" alt="">
-                                </div>
-                                <div class="comments-text">
-                                    <a href="#"><span>Sandy Doe</span> on Facebook is offering facial recognition...</a>
-                                    <p>06:34 am, April 14, 2018</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##### Blog Post Area End ##### -->
-
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area">
-
-        <!-- Main Footer Area -->
-        <div class="main-footer-area">
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
             <div class="container">
                 <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center ">
+                            <h3>Musician </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
 
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="footer-widget-area">
-                            <!-- Footer Logo -->
-                            <div class="footer-logo">
-                                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+    <!-- music_area  -->
+    <div class="music_area">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                                <div class="col-xl-9 col-md-9">
+                                    <div class="music_field">
+                                            <div class="thumb">
+                                                    <img src="img/music_man/1.png" alt="">
+                                                </div>
+                                                <div class="audio_name">
+                                                    <div class="name">
+                                                        <h4>Frando Kally</h4>
+                                                        <p>10 November, 2019</p>
+                                                    </div>
+                                                        <audio preload="auto" controls>
+                                                                <source src="https://vnso-zn-16-tf-mp3-s1-zmp3.zadn.vn/a59b28d70f90e6cebf81/8745704407697855328?authen=exp=1577248308~acl=/a59b28d70f90e6cebf81/*~hmac=266b11772a70ac3fb58c1680f5242f86&filename=Noi-Het-Long-Minh-Liz-Kim-Cuong.mp3">
+                                                            </audio>
+                                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3">
+                                    <div class="music_btn">
+                                            <a href="#" class="boxed-btn">buy albam</a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- music_area end  -->
+
+    <!-- about_area  -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-5 col-md-6">
+                    <div class="about_thumb">
+                        <img class="img-fluid" src="img/about/about_1.png" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-7 col-md-6">
+                    <div class="about_info">
+                        <h3>Jack Kalib</h3>
+                        <p>Esteem spirit temper too say adieus who direct esteem. It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable projecting expression enim ad minim veniam quis nostrud exercitation we have supported programmes to help alleviate human suffering through animal welfare when people might depend.</p>
+                        <div class="signature">
+                            <img src="img/about/signature.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ about_area  -->
+
+    <!-- youtube_video_area  -->
+    <div class="youtube_video_area">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/1.png" alt="">
+                        </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                            <i class="fa fa-play"></i>
+                                        </a>
                             </div>
-                            <!-- Footer Nav -->
-                            <div class="footer-nav">
+
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/2.png" alt="">
+                        </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                            </div>
+
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/3.png" alt="">
+                        </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                            </div>
+
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single_video">
+                        <div class="thumb">
+                            <img src="img/video/4.png" alt="">
+                        </div>
+                        <div class="hover_elements">
+                            <div class="video">
+                                    <a class="popup-video" href="https://www.youtube.com/watch?v=Hzmp3z6deF8"> 
+                                            <i class="fa fa-play"></i>
+                                        </a>
+                            </div>
+
+                            <div class="hover_inner">
+                                <span>New York Show-2018</span>
+                                <h3><a href="#">Shadows of My Dream</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / youtube_video_area  -->
+
+    <!-- music_area  -->
+    <div class="music_area music_gallery">
+        <div class="container">
+                <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section_title text-center mb-65">
+                                <h3>Latest Tracks</h3>
+                            </div>
+                        </div>
+                    </div>
+            <div class="row align-items-center justify-content-center mb-20">
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                                <div class="col-xl-9 col-md-9">
+                                    <div class="music_field">
+                                            <div class="thumb">
+                                                    <img src="img/music_man/1.png" alt="">
+                                                </div>
+                                                <div class="audio_name">
+                                                    <div class="name">
+                                                        <h4>Frando Kally</h4>
+                                                        <p>10 November, 2019</p>
+                                                    </div>
+                                                        <audio preload="auto" controls>
+                                                                <source src="https://www.w3schools.com/html/horse.mp3">
+                                                            </audio>
+                                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3">
+                                    <div class="music_btn">
+                                            <a href="#" class="boxed-btn">buy albam</a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row align-items-center justify-content-center mb-20">
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                                <div class="col-xl-9 col-md-9">
+                                    <div class="music_field">
+                                            <div class="thumb">
+                                                    <img src="img/music_man/2.png" alt="">
+                                                </div>
+                                                <div class="audio_name">
+                                                    <div class="name">
+                                                        <h4>Frando Kally</h4>
+                                                        <p>10 November, 2019</p>
+                                                    </div>
+                                                        <audio preload="auto" controls>
+                                                                <source src="https://www.w3schools.com/html/horse.mp3">
+                                                            </audio>
+                                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3">
+                                    <div class="music_btn">
+                                            <a href="#" class="boxed-btn">buy albam</a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row align-items-center justify-content-center mb-20">
+                <div class="col-xl-10">
+                    <div class="row align-items-center">
+                                <div class="col-xl-9 col-md-9">
+                                    <div class="music_field">
+                                            <div class="thumb">
+                                                    <img src="img/music_man/3.png" alt="">
+                                                </div>
+                                                <div class="audio_name">
+                                                    <div class="name">
+                                                        <h4>Frando Kally</h4>
+                                                        <p>10 November, 2019</p>
+                                                    </div>
+                                                        <audio preload="auto" controls>
+                                                                <source src="https://www.w3schools.com/html/horse.mp3">
+                                                            </audio>
+                                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-3">
+                                    <div class="music_btn">
+                                            <a href="#" class="boxed-btn">buy albam</a>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- music_area end  -->
+
+    <!-- gallery -->
+    <div class="gallery_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-65">
+                        <h3>Image Galleries</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row grid">
+                    <div class="col-xl-5 col-lg-5 grid-item cat1 col-md-6">
+                        <div class="single-gallery mb-30">
+                                <div class="portfolio-img">
+                                        <img src="img/gallery/1.png" alt="">
+                                </div>
+                                <div class="gallery_hover">
+                                    <a  class="popup-image"  href="img/gallery/1.png" class="hover_inner">
+                                        <i class="ti-plus"></i>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7 grid-item cat3 cat4 col-md-6">
+                        <div class="single-gallery mb-30">
+                                <div class="portfolio-img">
+                                        <img src="img/gallery/2.png" alt="">
+                                </div>
+                                <div class="gallery_hover">
+                                        <a class="popup-image" href="img/gallery/2.png" class="hover_inner">
+                                            <i class="ti-plus"></i>
+                                        </a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 grid-item cat4 col-md-6">
+                        <div class="single-gallery mb-30">
+                                <div class="portfolio-img">
+                                        <img src="img/gallery/3.png" alt="">
+                                </div>
+                                <div class="gallery_hover">
+                                        <a class="popup-image" href="img/gallery/3.png" class="hover_inner">
+                                            <i class="ti-plus"></i>
+                                        </a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 grid-item cat2 col-md-6">
+                        <div class="single-gallery mb-30">
+                            <div class="portfolio-img">
+                                    <img src="img/gallery/4.png" alt="">
+                            </div>
+                            <div class="gallery_hover">
+                                    <a class="popup-image" href="img/gallery/4.png" class="hover_inner">
+                                        <i class="ti-plus"></i>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 grid-item cat2 col-md-6">
+                        <div class="single-gallery mb-30">
+                            <div class="portfolio-img">
+                                    <img src="img/gallery/5.png" alt="">
+                            </div>
+                            <div class="gallery_hover">
+                                    <a class="popup-image" href="img/gallery/5.png" class="hover_inner">
+                                        <i class="ti-plus"></i>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!--/ gallery -->
+
+    <!-- contact_rsvp -->
+    <div class="contact_rsvp">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="text text-center">
+                        <h3>Contact For RSVP</h3>
+                        <a class="boxed-btn3" href="contact.html">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ contact_rsvp -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-6">
+                            <div class="footer_widget">
+                                    <h3 class="footer_title">
+                                            Services
+                                    </h3>
+                                <div class="subscribe-from">
+                                        <form action="#">
+                                                <input type="text" placeholder="Enter your mail">
+                                                <button type="submit" >Subscribe</button>
+                                            </form>
+                                </div>
+                                <p class="sub_text">Esteem spirit temper too say adieus who direct esteem esteems luckily.</p>
+                                </div>
+                    </div>
+                    <div class="col-xl-5 col-md-5 offset-xl-1">
+                        <div class="footer_widget">
+                                <h3 class="footer_title">
+                                        Contact Me
+                                </h3>
+                            <ul>
+                                <li><a href="#">conbusi@support.com
+                                    </a></li>
+                                <li><a href="#">+10 873 672 6782
+                                    </a></li>
+                                <li><a href="#">600/D, Green road, Kings Garden NewYork-6732</a></li>
+                            </ul>
+                            <div class="socail_links">
                                 <ul>
-                                    <li class="active"><a href="#">Top 10</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Funny</a></li>
-                                    <li><a href="#">Advertising</a></li>
-                                    <li><a href="#">Celebs</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">Videos</a></li>
-                                    <li><a href="#">Travel</a></li>
-                                    <li><a href="#">Features</a></li>
-                                    <li><a href="#">Submit a video</a></li>
-                                    <li><a href="#">Don’tMiss</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class=" fa fa-facebook "></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-youtube-play"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Newsletter Widget -->
-                        <div class="newsletter-widget">
-                            <h4>Sign up to <br>our newsletter</h4>
-                            <form action="#" method="post">
-                                <input type="text" name="text" placeholder="Name">
-                                <input type="email" name="email" placeholder="Email">
-                                <button type="submit" class="btn w-100">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- Footer Widget Area -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="footer-widget-area">
-                            <!-- Widget Title -->
-                            <h4 class="widget-title">Latest articles</h4>
-
-                            <!-- Single Latest Post -->
-                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/4.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Latest Post -->
-                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/5.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Sed a elit euismod augue semper congue sit amet ac.</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Latest Post -->
-                            <div class="single-blog-post style-2 d-flex align-items-center">
-                                <div class="post-thumb">
-                                    <a href="#"><img src="img/bg-img/6.jpg" alt=""></a>
-                                </div>
-                                <div class="post-data">
-                                    <a href="#" class="post-title">
-                                        <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                                    </a>
-                                    <div class="post-meta">
-                                        <p class="post-date"><a href="#">7:00 AM | April 14</a></p>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>
@@ -744,35 +506,77 @@
                 </div>
             </div>
         </div>
-
-        <!-- Bottom Footer Area -->
-        <div class="bottom-footer-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Copywrite -->
-                        <p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-7 col-md-6">
+                        <p class="copy_right">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                    <div class="col-xl-5 col-md-6">
+                        <div class="footer_links">
+                            <ul>
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">tracks</a></li>
+                                <li><a href="#">blog</a></li>
+                                <li><a href="#">contact</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
+    <!--/ footer end  -->
 
-    <!-- ##### All Javascript Files ##### -->
-    <!-- jQuery-2.2.4 js -->
-	<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+    <!-- link that opens popup -->
+
+    <!-- JS here -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous">
+    </script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/audioplayer.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+
+    <script src="js/main.js"></script>
+    
+		<script>
+                $(function() {
+                    $('audio').audioPlayer({
+
+                    });
+                });
+            </script>
 </body>
 
 </html>

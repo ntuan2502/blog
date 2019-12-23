@@ -1,102 +1,133 @@
-@extends('layouts.auth')
-@section('header')
-<title>INSPINIA | Register</title>
-@endsection
-@section('body')
-<div class="middle-box text-center loginscreen animated fadeInDown">
-    <div>
-        <div>
-            <h1 class="logo-name">IN+</h1>
-        </div>
-        <h3>Register to IN+</h3>
-        <p class="error_status"></p>
-        <p class="success_status"></p>
-        <form class="m-t" role="form" action="" id="formRegister" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-                <input type="text" class="form-control" name="name" placeholder="Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" name="email" placeholder="Email" required>
-            </div>
-            <div class="row" id="pwd-container1">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <input type="password" class="form-control example1" name="password" id="password1" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <div class="pwstrength_viewport_progress"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="form-group">
-                <div class="checkbox i-checks"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
-            </div> -->
-            <button type="submit" class="btn btn-primary block full-width m-b submit_button">Register</button>
+<!DOCTYPE html>
+<html lang="en">
 
-            <p class="text-muted text-center"><small>Already have an account?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="/login">Login</a>
-        </form>
-        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
-    </div>
-</div>
-@endsection
-@section('footer')
-<script>
-    $(document).ready(function() {
-        var options1 = {};
-        options1.ui = {
-            container: "#pwd-container1",
-            showVerdictsInsideProgressBar: true,
-            viewports: {
-                progress: ".pwstrength_viewport_progress"
-            }
-        };
-        options1.common = {
-            debug: false,
-        };
-        $('.example1').pwstrength(options1);
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#formRegister').submit(function(e) {
-            e.preventDefault();
-            var name = $('[name=name]').val();
-            var email = $('[name=email]').val();
-            var password = $('[name=password]').val();
-            $.ajax({
-                url: '/register',
-                type: 'post',
-                data: {
-                    name: name,
-                    email: email,
-                    password: password,
-                },
-                error: function(err) {
-                    console.log(err);
-                },
-                success: function(data) {
-                    if (data.email === 'false') {
-                        $('.error_status').text('Email already exists!');
-                        $('.error_status').css('display', 'block');
-                    } else {
-                        $('.error_status').css('display', 'none');
-                        $('.success_status').text('Your registration was successful! Redirecting in 5 seconds...');
-                        $('.success_status').css('display', 'block');
-                        $('.submit_button').attr('disabled', 'true');
-                        $('[name=name]').attr('disabled', 'true');
-                        $('[name=email]').attr('disabled', 'true');
-                        $('[name=password]').attr('disabled', 'true');
+<head>
+	<title>Contact V18</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="{{asset('public/register/images/icons/favicon.ico')}}">
+	<link rel="stylesheet" href="{{asset('public/register/vendor/bootstrap/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/vendor/animate/animate.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/vendor/css-hamburgers/hamburgers.min.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/vendor/animsition/css/animsition.min.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/vendor/select2/select2.min.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/vendor/daterangepicker/daterangepicker.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/css/util.css')}}">
+	<link rel="stylesheet" href="{{asset('public/register/css/main.css')}}">
+</head>
 
-                        setTimeout(function() {
-                            window.location.href = data.redirect;
-                        }, 5000);
-                    }
-                }
-            });
-            return false;
-        });
-    });
-</script>
-@endsection
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Send Us A Message
+				</span>
+
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<label class="label-input100" for="name">Full name</label>
+					<input id="name" class="input100" type="text" name="name" placeholder="Enter your name...">
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+					<label class="label-input100" for="email">Email Address</label>
+					<input id="email" class="input100" type="text" name="email" placeholder="Enter your email...">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100">
+					<div class="label-input100">What do you need?</div>
+					<div>
+						<select class="js-select2" name="service">
+							<option>Please chooses</option>
+							<option>UI/UX Design</option>
+							<option>eCommerce Bussiness</option>
+							<option>Online Services</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Message is required">
+					<label class="label-input100" for="message">Message</label>
+					<textarea id="message" class="input100" name="message" placeholder="Type your message here..."></textarea>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						Send
+					</button>
+				</div>
+
+				<div class="contact100-form-social flex-c-m">
+					<a href="#" class="contact100-form-social-item flex-c-m bg1 m-r-5">
+						<i class="fa fa-facebook-f" aria-hidden="true"></i>
+					</a>
+
+					<a href="#" class="contact100-form-social-item flex-c-m bg2 m-r-5">
+						<i class="fa fa-twitter" aria-hidden="true"></i>
+					</a>
+
+					<a href="#" class="contact100-form-social-item flex-c-m bg3">
+						<i class="fa fa-youtube-play" aria-hidden="true"></i>
+					</a>
+				</div>
+			</form>
+
+			<div class="contact100-more flex-col-c-m" style="background-image: url({{asset('public/register/images/bg-01.jpg')}});">
+			</div>
+		</div>
+	</div>
+
+
+	<script src="{{asset('public/register/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{asset('public/register/vendor/animsition/js/animsition.min.js')}}"></script>
+	<script src="{{asset('public/register/vendor/bootstrap/js/popper.js')}}"></script>
+	<script src="{{asset('public/register/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('public/register/vendor/select2/select2.min.js')}}"></script>
+	<script>
+		$(".js-select2").each(function() {
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+		$(".js-select2").each(function() {
+			$(this).on('select2:open', function(e) {
+				$(this).parent().next().addClass('eff-focus-selection');
+			});
+		});
+		$(".js-select2").each(function() {
+			$(this).on('select2:close', function(e) {
+				$(this).parent().next().removeClass('eff-focus-selection');
+			});
+		});
+	</script>
+	<script src="{{asset('public/register/vendor/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{asset('public/register/vendor/daterangepicker/daterangepicker.js')}}"></script>
+	<script src="{{asset('public/register/vendor/countdowntime/countdowntime.js')}}"></script>
+	<script src="{{asset('public/register/js/main.js')}}"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+</body>
+
+</html>
