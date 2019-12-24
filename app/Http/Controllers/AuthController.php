@@ -7,7 +7,7 @@ use App\Helpers\Local;
 use App\Image;
 use File;
 
-class ImageController extends Controller
+class AuthController extends Controller
 {
     public function __construct()
     {
@@ -35,5 +35,9 @@ class ImageController extends Controller
         return response()->json([
             'url' => $request->url,
         ]);
+    }
+
+    public function getAccount(){
+        return view('account');
     }
 }

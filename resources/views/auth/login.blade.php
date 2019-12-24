@@ -68,10 +68,10 @@
 					</div>
 
 					<div class="login100-form-social flex-c-m">
-						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+						<a href="/auth/facebook" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<i class="fa fa-facebook-f" aria-hidden="true"></i>
 						</a>
-						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+						<a href="/auth/google" class="login100-form-social-item flex-c-m bg2 m-r-5">
 							<i class="fa fa-twitter" aria-hidden="true"></i>
 						</a>
 					</div>
@@ -105,10 +105,16 @@
 				var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 				if (email.length == 0) {
+					if(password.length > 0){
+						hideValidate(j_password);
+					}
 					j_email.parent().attr('data-validate', 'Email is required');
 					flag = false;
 				}
 				if (password.length == 0) {
+					if(email.length > 0){
+						hideValidate(j_email);
+					}
 					j_password.parent().attr('data-validate', 'Password is required');
 					flag = false;
 				}

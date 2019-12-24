@@ -11,13 +11,11 @@
 |
 */
 
-Route::post('/image/upload', 'ImageController@uploadImage')->name('');
-Route::post('/image/delete', 'ImageController@deleteImage')->name('');
+Route::post('/image/upload', 'AuthController@uploadImage')->name('');
+Route::post('/image/delete', 'AuthController@deleteImage')->name('');
+Route::get('/account', 'AuthController@getAccount');
 
-Route::get('/', function () {
-    return view('index');
-    // return redirect('/login');
-});
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@admin')->name('admin');
@@ -83,10 +81,17 @@ Route::group(['prefix' => 'forgotPassword'], function () {
     Route::get('/', 'HomeController@forgotPassword')->name('forgotPassword');
     Route::post('/', 'HomeController@forgotPasswordP')->name('forgotPassword');
 });
+
 //Social Login
 Route::group(['prefix' => 'auth'], function () {
     Route::group(['prefix' => '{provider}'], function () {
         Route::get('/', 'UserSocialController@redirectToProvider')->name('');
         Route::get('/callback', 'UserSocialController@handleProviderCallback')->name('');
+    });
+});
+
+Route::group(['prefix' => 'category'], function () {
+    Route::group(['prefix' => '{category_slug}'], function () {
+        Route::get('/', 'HomeController@getCategory')->name('');
     });
 });

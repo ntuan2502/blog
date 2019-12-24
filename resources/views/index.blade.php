@@ -4,7 +4,6 @@
 @endsection
 @section('body')
 
-<!-- slider_area_start -->
 <div class="slider_area">
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
         <div class="container">
@@ -18,9 +17,8 @@
         </div>
     </div>
 </div>
-<!-- slider_area_end -->
 
-<!-- music_area  -->
+@if($vsp_user)
 <div class="music_area">
     <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -29,15 +27,15 @@
                     <div class="col-xl-12 col-md-12">
                         <div class="music_field">
                             <div class="thumb">
-                                <img src="{{asset('public/homepage/img/music_man/1.png')}}" alt="">
+                                <img id="music_image" src="" alt="">
                             </div>
                             <div class="audio_name">
                                 <div class="name">
-                                    <h4>Frando Kally</h4>
-                                    <p>10 November, 2019</p>
+                                    <h4><a href="{{$music->link}}" id="music_link" target="_blank">{{$music->title}}</a></h4>
+                                    <p id="music_artist">{{$music->artist}}</p>
                                 </div>
-                                <audio preload="auto" controls>
-                                    <source src="https://vnso-zn-5-tf-mp3-s1-zmp3.zadn.vn/75421169342edd70843f/8958223993392556705?authen=exp=1577249938~acl=/75421169342edd70843f/*~hmac=5c9eea9a32acc6411f04b852af504bc7&filename=Dung-Lai-Day-Thoi-Hoa-Vinh.mp3">
+                                <audio preload="auto" controls {{$music->auto_play == 1? 'autoplay' : ''}} {{$music->loop == 1? 'loop' : ''}}>
+                                    <source id="music_src" src="{{$music->audio}}">
                                 </audio>
                             </div>
                         </div>
@@ -53,9 +51,8 @@
         </div>
     </div>
 </div>
-<!-- music_area end  -->
+@endif
 
-<!-- about_area  -->
 <div class="about_area">
     <div class="container">
         <div class="row align-items-center">
@@ -76,9 +73,7 @@
         </div>
     </div>
 </div>
-<!--/ about_area  -->
 
-<!-- youtube_video_area  -->
 <div class="youtube_video_area">
     <div class="container-fluid p-0">
         <div class="row no-gutters">
@@ -161,9 +156,7 @@
         </div>
     </div>
 </div>
-<!-- / youtube_video_area  -->
 
-<!-- music_area  -->
 <div class="music_area music_gallery">
     <div class="container">
         <div class="row">
@@ -259,9 +252,7 @@
         </div>
     </div>
 </div>
-<!-- music_area end  -->
 
-<!-- gallery -->
 <div class="gallery_area">
     <div class="container">
         <div class="row">
@@ -335,9 +326,7 @@
         </div>
     </div>
 </div>
-<!--/ gallery -->
 
-<!-- contact_rsvp -->
 <div class="contact_rsvp">
     <div class="container">
         <div class="row">
@@ -350,9 +339,12 @@
         </div>
     </div>
 </div>
-<!--/ contact_rsvp -->
 
 @endsection
 @section('footer')
-
+<script>
+    $(document).ready(function() {
+        $('audio').audioPlayer();
+    });
+</script>
 @endsection

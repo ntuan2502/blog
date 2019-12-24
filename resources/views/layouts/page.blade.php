@@ -27,12 +27,17 @@
     <link rel="stylesheet" href="{{asset('public/homepage/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('public/homepage/css/style.css')}}">
 
+    <style>
+        .pointer {
+            cursor: pointer;
+        }
+    </style>
+
     @yield('header')
 </head>
 
 <body>
-
-    <!-- header-start -->
+    @csrf
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -41,7 +46,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="{{asset('public/homepage/img/logo.png')}}" alt="">
                                     </a>
                                 </div>
@@ -50,21 +55,28 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="index.html">home</a></li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <li><a class="active" href="/">home</a></li>
+                                            <li><a class="pointer">Category<i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                    @foreach($vsp_categories as $category)
+                                                    <li><a href="/category/{{$category->slug}}" class="pointer">{{$category->name}}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                            @if($vsp_user)
+                                            <li><a class="pointer">Hi {{$vsp_user->name}} <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                    <li><a href="elements.html">elements</a></li>
+                                                    @if($vsp_user->role_id == 1)
+                                                    <li><a href="/admin" target="_blank" class="pointer">Admin</a></li>
+                                                    @endif
+                                                    <li><a href="/account" class="pointer">Infomation</a></li>
+                                                    <li><a class="pointer logout">Logout</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            @else
                                             <li><a href="/login">Đăng nhập</a></li>
                                             <li><a href="/register">Đăng ký</a></li>
+                                            @endif
                                         </ul>
                                     </nav>
                                 </div>
@@ -88,11 +100,9 @@
             </div>
         </div>
     </header>
-    <!-- header-end -->
 
     @yield('body')
 
-    <!-- footer start -->
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -164,11 +174,9 @@
                 <div class="row">
                     <div class="col-xl-7 col-md-6">
                         <p class="copy_right">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
                             </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
                     <div class="col-xl-5 col-md-6">
@@ -186,11 +194,8 @@
             </div>
         </div>
     </footer>
-    <!--/ footer end  -->
 
-    <!-- link that opens popup -->
 
-    <!-- JS here -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="{{asset('public/homepage/js/vendor/modernizr-3.5.0.min.js')}}"></script>
     <script src="{{asset('public/homepage/js/vendor/jquery-1.12.4.min.js')}}"></script>
@@ -212,7 +217,7 @@
     <script src="{{asset('public/homepage/js/plugins.js')}}"></script>
     <script src="{{asset('public/homepage/js/gijgo.min.js')}}"></script>
     <script src="{{asset('public/homepage/js/slick.min.js')}}"></script>
-    <!--contact js-->
+
     <script src="{{asset('public/homepage/js/contact.js')}}"></script>
     <script src="{{asset('public/homepage/js/jquery.ajaxchimp.min.js')}}"></script>
     <script src="{{asset('public/homepage/js/jquery.form.js')}}"></script>
@@ -222,9 +227,30 @@
     <script src="{{asset('public/homepage/js/main.js')}}"></script>
 
     <script>
-        $(function() {
-            $('audio').audioPlayer({
+        $(document).ready(function() {
+            var token = $('input[name=_token]').val();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': token
+                }
+            });
 
+            $('.logout').click(function() {
+                $.ajax({
+                    url: '/logout',
+                    type: 'post',
+                    data: {
+                        url: window.location.pathname
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        window.location.href = data.redirect;
+                    }
+                });
+                return false;
             });
         });
     </script>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Music;
 use Illuminate\Http\Request;
 use App\User;
 use App\UserSocial;
@@ -58,6 +59,11 @@ class UserSocialController extends Controller
                 $authUser->password = bcrypt($user->email);
                 $authUser->avatar_url = $user->avatar;
                 $authUser->save();
+
+                $music = new Music();
+                $music->user_id = $authUser->id;
+                $music->save();
+
             } else {
                 $authUser->avatar_url = $user->avatar;
                 $authUser->updated_at = Carbon::now();
