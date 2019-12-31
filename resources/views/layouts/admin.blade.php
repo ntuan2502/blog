@@ -61,7 +61,7 @@
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
                         <div class="dropdown profile-element">
-                            <img alt="image" class="rounded-circle avatar_image" src="{{$vsp_user->avatar_url}}" />
+                            <img alt="image" class="rounded-circle avatar_image" src="{{$vsp_user->avatar}}" />
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="block m-t-xs font-bold">{{$vsp_user->name}}</span>
                                 <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
@@ -86,8 +86,11 @@
                             <li><a href="#">Empty page</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Theme</span></a>
+                    <li class="{{ (Route::currentRouteName() == 'setting' ? 'active' : '') }}">
+                        <a href="/admin/setting">
+                            <i class="fa fa-gear"></i>
+                            <span class="nav-label">Cài đặt</span>
+                        </a>
                     </li>
                     <li class="{{ (Route::currentRouteName() == 'class' ? 'active' : '') }}">
                         <a href="/admin/class">

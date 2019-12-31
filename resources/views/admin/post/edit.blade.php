@@ -76,7 +76,7 @@
                             <label class="col-sm-2 col-form-label">Ảnh bìa</label>
                             <div class="col-sm-10">
                                 <div class="custom-file">
-                                    <input id="cover" name="cover" type="file" accept="image/*" class="custom-file-input" required>
+                                    <input id="cover" name="cover" type="file" accept="image/*" class="custom-file-input">
                                     <label for="cover" class="custom-file-label">Choose file...</label>
                                 </div>
                             </div>

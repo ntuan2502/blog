@@ -167,7 +167,7 @@
         });
 
         $(".select2_demo_3").select2({
-            placeholder: "Select a state",
+            placeholder: "Select a category",
             allowClear: true
         });
 

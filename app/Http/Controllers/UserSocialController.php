@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Music;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
+use Laravel\Socialite\Facades\Socialite;
+use App\Music;
 use App\User;
 use App\UserSocial;
-use Socialite, Auth, Redirect, Session, URL;
-use Illuminate\Support\Carbon;
+use App\ZingMp3;
 
 class UserSocialController extends Controller
 {
@@ -40,9 +45,12 @@ class UserSocialController extends Controller
         $account = UserSocial::where($find)->first();
 
         if ($account) {
-            $account->user->avatar_url = $user->avatar;
+            $account->user->avatar = $user->avatar;
             $account->user->updated_at = Carbon::now();
             $account->user->save();
+
+            $this->checkMusic($account->user->id);
+
             return $account->user;
         } else {
             $account = new UserSocial([
@@ -57,17 +65,18 @@ class UserSocialController extends Controller
                 $authUser->email = $user->email;
                 $authUser->name = $user->name;
                 $authUser->password = bcrypt($user->email);
-                $authUser->avatar_url = $user->avatar;
+                $authUser->avatar = $user->avatar;
                 $authUser->save();
 
-                $music = new Music();
-                $music->user_id = $authUser->id;
-                $music->save();
+                $this->checkMusic($authUser->id);
 
             } else {
-                $authUser->avatar_url = $user->avatar;
+                $authUser->avatar = $user->avatar;
                 $authUser->updated_at = Carbon::now();
                 $authUser->save();
+
+                $this->checkMusic($authUser->id);
+
             }
 
             $account->user()->associate($authUser);
@@ -75,5 +84,30 @@ class UserSocialController extends Controller
 
             return $authUser;
         }
+    }
+
+    public function checkMusic($user_id){
+        $music = Music::where('user_id', $user_id)->first();
+            if ($music) {
+                $json = ZingMp3::getInfo($music->link);
+
+                $music->title = $json->title;
+                $music->artist = $json->artist;
+                $music->audio = $json->audio;
+                $music->save();
+            } else {
+                $music = new Music();
+                $music->user_id = $user_id;
+
+                // $link = 'https://zingmp3.vn/bai-hat/Kiss-The-Rain-Yiruma/ZWZD909W.html';
+                $link = 'https://zingmp3.vn/bai-hat/Happy-New-Year-A-Teens/ZW6I60C9.html';
+                $json = ZingMp3::getInfo($link);
+
+                $music->link = $json->link;
+                $music->title = $json->title;
+                $music->artist = $json->artist;
+                $music->audio = $json->audio;
+                $music->save();
+            }
     }
 }

@@ -41,7 +41,7 @@
 						<span class="label-input100">Password</span>
 					</div>
 
-					<div class="flex-sb-m w-full p-t-3 p-b-32">
+					<!-- <div class="flex-sb-m w-full p-t-3 p-b-32">
 						<div class="contact100-form-checkbox">
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							<label class="label-checkbox100" for="ckb1">
@@ -53,7 +53,7 @@
 								Forgot Password?
 							</a>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
@@ -71,9 +71,9 @@
 						<a href="/auth/facebook" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<i class="fa fa-facebook-f" aria-hidden="true"></i>
 						</a>
-						<a href="/auth/google" class="login100-form-social-item flex-c-m bg2 m-r-5">
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-						</a>
+						<!-- <a href="/auth/google" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-google" aria-hidden="true"></i>
+						</a> -->
 					</div>
 				</form>
 				<div class="login100-more" style="background-image: url({{asset('public/login/images/bg-01.jpg')}});">

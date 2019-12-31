@@ -63,7 +63,8 @@
     height: 14px;
 }
 
-.audioplayer-playing .audioplayer-playpause a::before, .audioplayer-playing .audioplayer-playpause a::after {
+.audioplayer-playing .audioplayer-playpause a::before,
+.audioplayer-playing .audioplayer-playpause a::after {
     content: '';
     width: 4px;
     height: 14px;
@@ -73,9 +74,9 @@
 .audioplayer-time {
     display: flex;
     width: 40px;
-    justify-content:center;
+    justify-content: center;
     font-size: 12px;
-    color: rgba(51, 51 ,51, .6)
+    color: rgba(51, 51, 51, .6)
 }
 
 .audioplayer-time-current {
@@ -105,11 +106,12 @@
     background-color: #DDE2E6;
 }
 
-.audioplayer-bar > div {
+.audioplayer-bar>div {
     position: absolute;
     left: 0;
     top: 5px;
 }
+
 .audioplayer-bar-loaded {
     z-index: 1;
     height: 2px;
@@ -120,7 +122,7 @@
     flex-direction: row-reverse;
     z-index: 2;
     height: 2px;
-    background: -webkit-linear-gradient(left,#0059FF,#09B1FA);
+    background: -webkit-linear-gradient(left, #0059FF, #09B1FA);
 }
 
 .audioplayer-bar-played::after {
@@ -143,7 +145,6 @@
 
 .audioplayer-playing .audioplayer-bar-played::after {
     border: 2px solid #0059FF;
-
 }
 
 .audioplayer-volume {
@@ -167,7 +168,8 @@
     position: relative;
 }
 
-.audioplayer-volume-button a:before, .audioplayer-volume-button a:after {
+.audioplayer-volume-button a:before,
+.audioplayer-volume-button a:after {
     content: '';
     position: absolute;
 }
@@ -207,7 +209,7 @@
     margin-left: 8px;
 }
 
-.audioplayer-volume-adjust > div {
+.audioplayer-volume-adjust>div {
     position: relative;
     display: flex;
     width: 60px;
@@ -224,10 +226,5 @@
     background-color: #0059FF;
 }
 
-/* responsive | you can change the max-width value to match your theme */
 
-@media screen and (max-width: 679px) {
-    .audioplayer-volume-adjust {
-        display: none;
-    }
-}
+/* responsive | you can change the max-width value to match your theme */

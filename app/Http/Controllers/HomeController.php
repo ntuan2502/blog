@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Helpers\Pagination;
 use App\Music;
 use App\Post;
+use App\Setting;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,46 +14,49 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    private function getZingMP3($music)
+    private $limitPerPage = 5;
+    public function index(Request $request)
     {
-        $curl = curl_init();
+        $background = Setting::where('name', 'background')->first();
+        $name_version = Setting::where('name', 'name_version')->first();
+        $update_time = Setting::where('name', 'update_time')->first();
+        $version = Setting::where('name', 'version')->first();
+        $mod_32bit = Setting::where('name', 'mod_32bit')->first();
+        $mod_64bit = Setting::where('name', 'mod_64bit')->first();
+        $posts = Post::where('status', 1);
+        $page = $request->query('page') ? $request->query('page') : 1;
+        $number = $posts->count();
+        $totalPage = (int) ($number / $this->limitPerPage) + (($number % $this->limitPerPage) !== 0);
+        $previousPage = ($page == 1) ? 1 : ($page - 1);
+        $nextPage = ($page == $totalPage) ? $totalPage : ($page + 1);
+        $listPages = Pagination::initArray($page, $totalPage);
+        $posts = $posts->skip($this->limitPerPage * ($page - 1))->take($this->limitPerPage)->orderBy('id', 'DESC')->get();
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://zing-mp3.glitch.me/?url=" . $music,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "accept: application/json",
-                "content-type: application/json",
-            ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            return false;
-        } else {
-            return json_decode($response);
+        foreach ($posts as $post) {
+            $post->day_created = Carbon::parse($post->created_at)->format('d');
+            $post->Month_created = Carbon::parse($post->created_at)->format('M');
         }
-    }
 
-    public function index()
-    {
-        $user = Auth::user();
-        // if($user){
-        //     $music = Music::where('user_id', $user->id)->first();
-        //     return view('index')->with([
-        //         'music' => $music,
-        //     ]);
-        // }
-        return view('index');
+        $fullUrl = explode('?', $_SERVER['REQUEST_URI']);
+        $currUrl = $fullUrl[0];
+
+        return view('index')->with([
+            'background' => $background,
+            'name_version' => $name_version,
+            'update_time' => $update_time,
+            'version' => $version,
+            'mod_32bit' => $mod_32bit,
+            'mod_64bit' => $mod_64bit,
+            'posts' => $posts,
+            'fullUrl' => $fullUrl,
+            'currUrl' => $currUrl,
+            'totalPage' => $totalPage,
+            'previousPage' => $previousPage,
+            'nextPage' => $nextPage,
+            'listPages' => $listPages,
+            'currPage' => $page,
+            'limitPerPage' => $this->limitPerPage,
+        ]);
     }
 
     public function login()
@@ -157,20 +162,59 @@ class HomeController extends Controller
     {
     }
 
-    public function getCategory($category_slug)
+    public function getCategory(Request $request, $category_slug)
     {
+        $background = Setting::where('name', 'background')->first();
         $category = Category::where('slug', $category_slug)->first();;
         if ($category) {
-            $posts = Post::where('category_id', $category->id)->get();
-            foreach($posts as $post){
+            $posts = Post::where([
+                'category_id' => $category->id,
+                'status' => 1,
+            ]);
+
+            $page = $request->query('page') ? $request->query('page') : 1;
+            $number = $posts->count();
+            $totalPage = (int) ($number / $this->limitPerPage) + (($number % $this->limitPerPage) !== 0);
+            $previousPage = ($page == 1) ? 1 : ($page - 1);
+            $nextPage = ($page == $totalPage) ? $totalPage : ($page + 1);
+            $listPages = Pagination::initArray($page, $totalPage);
+            $posts = $posts->skip($this->limitPerPage * ($page - 1))->take($this->limitPerPage)->orderBy('id', 'DESC')->get();
+
+            foreach ($posts as $post) {
                 $post->day_created = Carbon::parse($post->created_at)->format('d');
                 $post->Month_created = Carbon::parse($post->created_at)->format('M');
             }
+
+            $fullUrl = explode('?', $_SERVER['REQUEST_URI']);
+            $currUrl = $fullUrl[0];
+
             return view('category')->with([
+                'background' => $background,
                 'posts' => $posts,
-                'category' => $category
+                'category' => $category,
+                'fullUrl' => $fullUrl,
+                'currUrl' => $currUrl,
+                'totalPage' => $totalPage,
+                'previousPage' => $previousPage,
+                'nextPage' => $nextPage,
+                'listPages' => $listPages,
+                'currPage' => $page,
+                'limitPerPage' => $this->limitPerPage
             ]);
         }
     }
 
+    public function getPost($post_slug)
+    {
+        $post = Post::where([
+            'slug' => $post_slug,
+        ])->first();
+        if ($post) {
+            return view('post')->with([
+                'post' => $post
+            ]);
+        } else {
+            return abort(404);
+        }
+    }
 }

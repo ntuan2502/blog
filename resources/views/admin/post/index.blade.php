@@ -68,13 +68,13 @@
                                 <td>{{$post->user_name}}</td>
                                 <td>
                                     @if($post->status == 0)
-                                    <button class="btn btn-rounded btn-danger">Ẩn</button>
+                                    <button class="btn btn-rounded btn-danger change_status" data-id="{{$post->id}}" data-status="1">Ẩn</button>
                                     @else
-                                    <button class="btn btn-rounded btn-info">Hiện</button>
+                                    <button class="btn btn-rounded btn-info change_status" data-id="{{$post->id}}" data-status="0">Hiện</button>
                                     @endif
                                 </td>
                                 <td>
-                                    <a data-fancybox="gallery" href="{{$post->cover}}"><img class="preview_icon" src="{{$post->cover}}"></a>
+                                    <a data-fancybox="gallery" href="/{{$post->cover}}"><img class="preview_icon" src="/{{$post->cover}}"></a>
                                 </td>
                                 <td>{{$post->view}}</td>
                                 <td>
@@ -139,6 +139,25 @@
                         window.location.href = data.redirect;
                     });
                 });
+            });
+        });
+
+        $('.change_status').click(function() {
+            var id = $(this).attr('data-id');
+            var status = $(this).attr('data-status');
+            $.ajax({
+                url: '/admin/post/' + id + '/change_status',
+                type: 'post',
+                data: {
+                    status: status
+                },
+                error: function(err) {
+                    console.log(err);
+                },
+                success: function(data) {
+                    console.log(data);
+                    location.reload();
+                }
             });
         });
     });

@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-use File;
+use Illuminate\Support\Facades\File;
 
 class Local
 {

@@ -6,6 +6,12 @@
         border-radius: 50%;
     }
 
+    @media (max-width: 767px) {
+        .avatar {
+            width: 80px;
+        }
+    }
+
     .float_r {
         float: right;
     }
@@ -21,6 +27,94 @@
     .audio_custom {
         width: 50%;
         float: right;
+    }
+
+    .music_area .music_field .audio_name .name {
+        margin-bottom: 0px;
+    }
+
+    @media (max-width: 425px) {
+        .avatar {
+            width: 80px;
+        }
+
+        .music_area .music_field .thumb {
+            margin-right: 26px;
+        }
+
+        .music_area .music_field .audio_name .name h4 {
+            font-size: 24px;
+        }
+
+    }
+
+    @media (max-width: 375px) {
+        .avatar {
+            width: 70px;
+        }
+
+        .music_area .music_field .thumb {
+            margin-right: 23px;
+        }
+
+        .music_area .music_field .audio_name .name h4 {
+            font-size: 21px;
+        }
+
+        .wheat_color a {
+            font-size: 16px;
+        }
+
+        .music a .wheat_color {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .avatar {
+            width: 60px;
+        }
+
+        .music_area .music_field .thumb {
+            margin-right: 20px;
+        }
+
+        .music_area .music_field .audio_name .name h4 {
+            font-size: 18px;
+        }
+
+        .wheat_color a {
+            font-size: 13px;
+        }
+
+        .music a .wheat_color {
+            font-size: 15px;
+        }
+    }
+
+    .input-group-icon .icon {
+        left: unset;
+        right: 30px;
+    }
+
+    .input-group-icon .single-input {
+        padding-left: 20px;
+        padding-right: 45px;
+    }
+
+    .color_green {
+        color: green;
+        font-weight: 600;
+    }
+
+    .error_message {
+        color: red;
+        display: none;
+    }
+
+    .success_message {
+        color: green;
+        display: none;
     }
 </style>
 @endsection
@@ -47,25 +141,27 @@
                     <div class="col-xl-12 col-md-12">
                         <div class="music_field">
                             <div class="thumb">
-                                <img src="{{$vsp_user->avatar_url}}" class="avatar" alt="">
+                                <img src="{{$vsp_user->avatar}}" class="avatar" alt="">
                             </div>
                             <div class="audio_name">
                                 <div class="name">
                                     <h4>
                                         <a>{{$vsp_user->name}}</a>
-                                        <a href="{{$music->link}}" class="float_r" target="_blank">{{$music->title}}</a>
                                     </h4>
-                                    <a class="wheat_color">Point: {{$vsp_user->point}}</a>
-                                    <a class="wheat_color float_r">{{$music->artist}}</a>
+                                    <div class="wheat_color">
+                                        <a>Point: {{$vsp_user->point}} | </a>
+                                        <a>Join: {{$vsp_user->join}}</a>
+                                    </div>
+                                    <div class="music">
+                                        <a href="{{$vsp_music->link}}" target="_blank">
+                                            <marquee class="wheat_color">Playing: {{$vsp_music->title}} - {{$vsp_music->artist}}</marquee>
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <h4 class="wheat_color inline_block">Join: {{$vsp_user->join}}</h4>
-
-                                <div class="audio_custom">
-                                    <audio id="audio" preload="auto" controls {{$music->auto_play == 1? 'autoplay' : ''}} {{$music->loop == 1? 'loop' : ''}}>
-                                        <source src="{{$music->audio}}">
-                                    </audio>
-                                </div>
+                                <audio id="audio" preload="auto" controls {{$vsp_music->auto_play == 1? 'autoplay' : ''}} {{$vsp_music->loop == 1? 'loop' : ''}}>
+                                    <source src="{{$vsp_music->audio}}">
+                                </audio>
                             </div>
                         </div>
                     </div>
@@ -82,632 +178,348 @@
 </div>
 @endif
 
-<section class="sample-text-area">
-    <div class="container box_1170">
-        <h3 class="text-heading">Text Sample</h3>
-        <p class="sample-text">
-            Every avid independent filmmaker has <b>Bold</b> about making that <i>Italic</i> interest documentary,
-            or short
-            film to show off their creative prowess. Many have great ideas and want to “wow”
-            the<sup>Superscript</sup> scene,
-            or video renters with their big project. But once you have the<sub>Subscript</sub> “in the can” (no easy
-            feat), how
-            do you move from a <del>Strike</del> through of master DVDs with the <u>“Underline”</u> marked
-            hand-written title
-            inside a secondhand CD case, to a pile of cardboard boxes full of shiny new, retail-ready DVDs, with UPC
-            barcodes
-            and polywrap sitting on your doorstep? You need to create eye-popping artwork and have your project
-            replicated.
-            Using a reputable full service DVD Replication company like PacificDisc, Inc. to partner with is
-            certainly a
-            helpful option to ensure a professional end result, but to help with your DVD replication project, here
-            are 4 easy
-            steps to follow for good DVD replication results:
-
-        </p>
-    </div>
-</section>
-
-<section class="button-area">
-    <div class="container box_1170 border-top-generic">
-        <h3 class="text-heading">Sample Buttons</h3>
-        <div class="button-group-area">
-            <a href="#" class="genric-btn default">Default</a>
-            <a href="#" class="genric-btn primary">Primary</a>
-            <a href="#" class="genric-btn success">Success</a>
-            <a href="#" class="genric-btn info">Info</a>
-            <a href="#" class="genric-btn warning">Warning</a>
-            <a href="#" class="genric-btn danger">Danger</a>
-            <a href="#" class="genric-btn link">Link</a>
-            <a href="#" class="genric-btn disable">Disable</a>
-        </div>
-        <div class="button-group-area mt-10">
-            <a href="#" class="genric-btn default-border">Default</a>
-            <a href="#" class="genric-btn primary-border">Primary</a>
-            <a href="#" class="genric-btn success-border">Success</a>
-            <a href="#" class="genric-btn info-border">Info</a>
-            <a href="#" class="genric-btn warning-border">Warning</a>
-            <a href="#" class="genric-btn danger-border">Danger</a>
-            <a href="#" class="genric-btn link-border">Link</a>
-            <a href="#" class="genric-btn disable">Disable</a>
-        </div>
-        <div class="button-group-area mt-40">
-            <a href="#" class="genric-btn default radius">Default</a>
-            <a href="#" class="genric-btn primary radius">Primary</a>
-            <a href="#" class="genric-btn success radius">Success</a>
-            <a href="#" class="genric-btn info radius">Info</a>
-            <a href="#" class="genric-btn warning radius">Warning</a>
-            <a href="#" class="genric-btn danger radius">Danger</a>
-            <a href="#" class="genric-btn link radius">Link</a>
-            <a href="#" class="genric-btn disable radius">Disable</a>
-        </div>
-        <div class="button-group-area mt-10">
-            <a href="#" class="genric-btn default-border radius">Default</a>
-            <a href="#" class="genric-btn primary-border radius">Primary</a>
-            <a href="#" class="genric-btn success-border radius">Success</a>
-            <a href="#" class="genric-btn info-border radius">Info</a>
-            <a href="#" class="genric-btn warning-border radius">Warning</a>
-            <a href="#" class="genric-btn danger-border radius">Danger</a>
-            <a href="#" class="genric-btn link-border radius">Link</a>
-            <a href="#" class="genric-btn disable radius">Disable</a>
-        </div>
-        <div class="button-group-area mt-40">
-            <a href="#" class="genric-btn default circle">Default</a>
-            <a href="#" class="genric-btn primary circle">Primary</a>
-            <a href="#" class="genric-btn success circle">Success</a>
-            <a href="#" class="genric-btn info circle">Info</a>
-            <a href="#" class="genric-btn warning circle">Warning</a>
-            <a href="#" class="genric-btn danger circle">Danger</a>
-            <a href="#" class="genric-btn link circle">Link</a>
-            <a href="#" class="genric-btn disable circle">Disable</a>
-        </div>
-        <div class="button-group-area mt-10">
-            <a href="#" class="genric-btn default-border circle">Default</a>
-            <a href="#" class="genric-btn primary-border circle">Primary</a>
-            <a href="#" class="genric-btn success-border circle">Success</a>
-            <a href="#" class="genric-btn info-border circle">Info</a>
-            <a href="#" class="genric-btn warning-border circle">Warning</a>
-            <a href="#" class="genric-btn danger-border circle">Danger</a>
-            <a href="#" class="genric-btn link-border circle">Link</a>
-            <a href="#" class="genric-btn disable circle">Disable</a>
-        </div>
-        <div class="button-group-area mt-40">
-            <a href="#" class="genric-btn default circle arrow">Default<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn primary circle arrow">Primary<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn success circle arrow">Success<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn info circle arrow">Info<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn warning circle arrow">Warning<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn danger circle arrow">Danger<span class="lnr lnr-arrow-right"></span></a>
-        </div>
-        <div class="button-group-area mt-10">
-            <a href="#" class="genric-btn default-border circle arrow">Default<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn primary-border circle arrow">Primary<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn success-border circle arrow">Success<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn info-border circle arrow">Info<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn warning-border circle arrow">Warning<span class="lnr lnr-arrow-right"></span></a>
-            <a href="#" class="genric-btn danger-border circle arrow">Danger<span class="lnr lnr-arrow-right"></span></a>
-        </div>
-        <div class="button-group-area mt-40">
-            <a href="#" class="genric-btn primary e-large">Extra Large</a>
-            <a href="#" class="genric-btn success large">Large</a>
-            <a href="#" class="genric-btn primary">Default</a>
-            <a href="#" class="genric-btn success medium">Medium</a>
-            <a href="#" class="genric-btn primary small">Small</a>
-        </div>
-        <div class="button-group-area mt-10">
-            <a href="#" class="genric-btn primary-border e-large">Extra Large</a>
-            <a href="#" class="genric-btn success-border large">Large</a>
-            <a href="#" class="genric-btn primary-border">Default</a>
-            <a href="#" class="genric-btn success-border medium">Medium</a>
-            <a href="#" class="genric-btn primary-border small">Small</a>
-        </div>
-    </div>
-</section>
-
 <div class="whole-wrap">
     <div class="container box_1170">
         <div class="section-top-border">
-            <h3 class="mb-30">Left Aligned</h3>
             <div class="row">
-                <div class="col-md-3">
-                    <img src="{{asset('public/homepage/img/elements/d.jpg')}}" alt="" class="img-fluid">
-                </div>
-                <div class="col-md-9 mt-sm-20">
-                    <p>Recently, the US Federal government banned online casinos from operating in America by making
-                        it illegal to
-                        transfer money to them through any US bank or payment system. As a result of this law, most
-                        of the popular
-                        online casino networks such as Party Gaming and PlayTech left the United States. Overnight,
-                        online casino
-                        players found themselves being chased by the Federal government. But, after a fortnight, the
-                        online casino
-                        industry came up with a solution and new online casinos started taking root. These began to
-                        operate under a
-                        different business umbrella, and by doing that, rendered the transfer of money to and from
-                        them legal. A major
-                        part of this was enlisting electronic banking systems that would accept this new
-                        clarification and start doing
-                        business with me. Listed in this article are the electronic banking systems that accept
-                        players from the United
-                        States that wish to play in online casinos.</p>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border text-right">
-            <h3 class="mb-30">Right Aligned</h3>
-            <div class="row">
-                <div class="col-md-9">
-                    <p class="text-right">Over time, even the most sophisticated, memory packed computer can begin
-                        to run slow if we
-                        don’t do something to prevent it. The reason why has less to do with how computers are made
-                        and how they age and
-                        more to do with the way we use them. You see, all of the daily tasks that we do on our PC
-                        from running programs
-                        to downloading and deleting software can make our computer sluggish. To keep this from
-                        happening, you need to
-                        understand the reasons why your PC is getting slower and do something to keep your PC
-                        running at its best. You
-                        can do this through regular maintenance and PC performance optimization programs</p>
-                    <p class="text-right">Before we discuss all of the things that could be affecting your PC’s
-                        performance, let’s
-                        talk a little about what symptoms</p>
-                </div>
-                <div class="col-md-3">
-                    <img src="{{asset('public/homepage/img/elements/d.jpg')}}" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <h3 class="mb-30">Definition</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="single-defination">
-                        <h4 class="mb-20">Definition 01</h4>
-                        <p>Recently, the US Federal government banned online casinos from operating in America by
-                            making it illegal to
-                            transfer money to them through any US bank or payment system. As a result of this law,
-                            most of the popular
-                            online casino networks</p>
+                <div class="col-lg-3 col-md-3">
+                    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="infomation-tab" data-toggle="pill" href="#infomation">Infomation</a>
+                        <a class="nav-link" id="change-password-tab" data-toggle="pill" href="#change-password">Change Password</a>
+                        <a class="nav-link" id="change-music-tab" data-toggle="pill" href="#change-music">Change Music</a>
+                        <!-- <a class="nav-link" id="other-tab" data-toggle="pill" href="#other">Other</a> -->
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="single-defination">
-                        <h4 class="mb-20">Definition 02</h4>
-                        <p>Recently, the US Federal government banned online casinos from operating in America by
-                            making it illegal to
-                            transfer money to them through any US bank or payment system. As a result of this law,
-                            most of the popular
-                            online casino networks</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="single-defination">
-                        <h4 class="mb-20">Definition 03</h4>
-                        <p>Recently, the US Federal government banned online casinos from operating in America by
-                            making it illegal to
-                            transfer money to them through any US bank or payment system. As a result of this law,
-                            most of the popular
-                            online casino networks</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <h3 class="mb-30">Block Quotes</h3>
-            <div class="row">
-                <div class="col-lg-12">
-                    <blockquote class="generic-blockquote">
-                        “Recently, the US Federal government banned online casinos from operating in America by
-                        making it illegal to
-                        transfer money to them through any US bank or payment system. As a result of this law, most
-                        of the popular
-                        online casino networks such as Party Gaming and PlayTech left the United States. Overnight,
-                        online casino
-                        players found themselves being chased by the Federal government. But, after a fortnight, the
-                        online casino
-                        industry came up with a solution and new online casinos started taking root. These began to
-                        operate under a
-                        different business umbrella, and by doing that, rendered the transfer of money to and from
-                        them legal. A major
-                        part of this was enlisting electronic banking systems that would accept this new
-                        clarification and start doing
-                        business with me. Listed in this article are the electronic banking”
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <h3 class="mb-30">Table</h3>
-            <div class="progress-table-wrap">
-                <div class="progress-table">
-                    <div class="table-head">
-                        <div class="serial">#</div>
-                        <div class="country">Countries</div>
-                        <div class="visit">Visits</div>
-                        <div class="percentage">Percentages</div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">01</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f1.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">02</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f2.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-2" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">03</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f3.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-3" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">04</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f4.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-4" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">05</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f5.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-5" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">06</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f6.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-6" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">07</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f7.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-7" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">08</div>
-                        <div class="country"> <img src="{{asset('public/homepage/img/elements/f8.jpg')}}" alt="flag">Canada</div>
-                        <div class="visit">645032</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-8" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <h3>Image Gallery</h3>
-            <div class="row gallery-item">
-                <div class="col-md-4">
-                    <a href="{{asset('public/homepage/img/elements/g1.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g1.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="{{asset('public/homepage/img/elements/g2.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g2.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="{{asset('public/homepage/img/elements/g3.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g3.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{asset('public/homepage/img/elements/g4.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g4.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-6">
-                    <a href="{{asset('public/homepage/img/elements/g5.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g5.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="{{asset('public/homepage/img/elements/g6.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g6.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="{{asset('public/homepage/img/elements/g7.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g7.jpg')}})"></div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="{{asset('public/homepage/img/elements/g8.jpg')}}" class="img-pop-up">
-                        <div class="single-gallery-image" style="background: url({{asset('public/homepage/img/elements/g8.jpg')}})"></div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3 class="mb-20">Image Gallery</h3>
-                    <div class="typography">
-                        <h1>This is header 01</h1>
-                        <h2>This is header 02</h2>
-                        <h3>This is header 03</h3>
-                        <h4>This is header 04</h4>
-                        <h5>This is header 01</h5>
-                        <h6>This is header 01</h6>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-sm-30">
-                    <h3 class="mb-20">Unordered List</h3>
-                    <div class="">
-                        <ul class="unordered-list">
-                            <li>Fta Keys</li>
-                            <li>For Women Only Your Computer Usage</li>
-                            <li>Facts Why Inkjet Printing Is Very Appealing
-                                <ul>
-                                    <li>Addiction When Gambling Becomes
-                                        <ul>
-                                            <li>Protective Preventative Maintenance</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>Dealing With Technical Support 10 Useful Tips</li>
-                            <li>Make Myspace Your Best Designed Space</li>
-                            <li>Cleaning And Organizing Your Computer</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-sm-30">
-                    <h3 class="mb-20">Ordered List</h3>
-                    <div class="">
-                        <ol class="ordered-list">
-                            <li><span>Fta Keys</span></li>
-                            <li><span>For Women Only Your Computer Usage</span></li>
-                            <li><span>Facts Why Inkjet Printing Is Very Appealing</span>
-                                <ol class="ordered-list-alpha">
-                                    <li><span>Addiction When Gambling Becomes</span>
-                                        <ol class="ordered-list-roman">
-                                            <li><span>Protective Preventative Maintenance</span></li>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </li>
-                            <li><span>Dealing With Technical Support 10 Useful Tips</span></li>
-                            <li><span>Make Myspace Your Best Designed Space</span></li>
-                            <li><span>Cleaning And Organizing Your Computer</span></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <div class="row">
                 <div class="col-lg-8 col-md-8">
-                    <h3 class="mb-30">Form Element</h3>
-                    <form action="#">
-                        <div class="mt-10">
-                            <input type="text" name="first_name" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="infomation" role="tabpanel" aria-labelledby="infomation-tab">
+                            <h3 class="mb-30">Infomation</h3>
+                            <form action="">
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Username</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" value="{{$vsp_user->username}}" id="username" {{$vsp_user->username != '' ? 'disabled' : '' }} placeholder="Username will not be changed" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username will not be changed'" required class="single-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" value="{{$vsp_user->name}}" id="name" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required class="single-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" value="{{$vsp_user->email}}" disabled class="single-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-9">
+                                            <label class="col-form-label error_message" id="infomation_status"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="genric-btn info circle change_infomation">Submit</button>
+                            </form>
                         </div>
-                        <div class="mt-10">
-                            <input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
+                        <div class="tab-pane fade" id="change-password" role="tabpanel" aria-labelledby="change-password-tab">
+                            <form action="">
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Last changed</label>
+                                        <div class="col-sm-9">
+                                            <label class="col-form-label color_green">{{$vsp_user->change_pass_at}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Old Password</label>
+                                        <div class="input-group-icon col-sm-9">
+                                            <input type="password" id="old_password" placeholder="Old password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Old password'" required class="single-input">
+                                            <div class="icon"><a class="pointer eye_old_password"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">New Password</label>
+                                        <div class="input-group-icon col-sm-9">
+                                            <input type="password" id="new_password" placeholder="New password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'New password'" required class="single-input">
+                                            <div class="icon"><a class="pointer eye_new_password"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Confirm Password</label>
+                                        <div class="input-group-icon col-sm-9">
+                                            <input type="password" id="confirm_password" placeholder="Confirm password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm password'" required class="single-input">
+                                            <div class="icon"><a class="pointer eye_confirm_password"><i class="fa fa-eye-slash" aria-hidden="true"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-9">
+                                            <label class="col-form-label error_message" id="status_label"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="genric-btn info circle change_password">Submit</button>
+                            </form>
                         </div>
-                        <div class="mt-10">
-                            <input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input">
-                        </div>
-                        <div class="mt-10">
-                            <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required class="single-input">
-                        </div>
-                        <div class="input-group-icon mt-10">
-                            <div class="icon"><i class="fa fa-thumb-tack" aria-hidden="true"></i></div>
-                            <input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required class="single-input">
-                        </div>
-                        <div class="input-group-icon mt-10">
-                            <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                            <div class="form-select" id="default-select"">
-											<select>
-												<option value=" 1">City</option>
-                                <option value="1">Dhaka</option>
-                                <option value="1">Dilli</option>
-                                <option value="1">Newyork</option>
-                                <option value="1">Islamabad</option>
-                                </select>
+                        <div class="tab-pane fade" id="change-music" role="tabpanel" aria-labelledby="change-music-tab">
+                            <div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Song</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" value="{{$vsp_music->title}}" disabled class="single-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Artist</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" value="{{$vsp_music->artist}}" disabled class="single-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Audio</label>
+                                        <div class="input-group-icon col-sm-9">
+                                            <input type="text" value="{{$vsp_music->audio}}" disabled class="single-input">
+                                            <div class="icon"><a href="{{$vsp_music->audio}}"><i class="fa fa-download" aria-hidden="true"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    -------
+                                </div>
                             </div>
+                            <form id="default-select">
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Link ZingMp3</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" value="{{$vsp_music->link}}" id="music_link" placeholder="Link" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Link'" required class="single-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Auto Play</label>
+                                        <div class="col-sm-9">
+                                            <div class="default-select">
+                                                <select id="auto_play">
+                                                    <option value="0">No</option>
+                                                    <option value="1" {{$vsp_music->auto_play == 1 ? 'selected' : ''}}>Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-10">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Loop</label>
+                                        <div class="col-sm-9">
+                                            <div class="default-select">
+                                                <select id="loop">
+                                                    <option value="0">No</option>
+                                                    <option value="1" {{$vsp_music->loop == 1 ? 'selected' : ''}}>Yes</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="genric-btn info circle change_music">Submit</button>
+                            </form>
                         </div>
-                        <div class="input-group-icon mt-10">
-                            <div class="icon"><i class="fa fa-globe" aria-hidden="true"></i></div>
-                            <div class="form-select" id="default-select"">
-											<select>
-												<option value=" 1">Country</option>
-                                <option value="1">Bangladesh</option>
-                                <option value="1">India</option>
-                                <option value="1">England</option>
-                                <option value="1">Srilanka</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="mt-10">
-                            <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required></textarea>
-                        </div>
-                        <div class="mt-10">
-                            <input type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'" required class="single-input-primary">
-                        </div>
-                        <div class="mt-10">
-                            <input type="text" name="first_name" placeholder="Accent color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Accent color'" required class="single-input-accent">
-                        </div>
-                        <div class="mt-10">
-                            <input type="text" name="first_name" placeholder="Secondary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Secondary color'" required class="single-input-secondary">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-sm-30">
-                    <div class="single-element-widget">
-                        <h3 class="mb-30">Switches</h3>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>01. Sample Switch</p>
-                            <div class="primary-switch">
-                                <input type="checkbox" id="default-switch">
-                                <label for="default-switch"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>02. Primary Color Switch</p>
-                            <div class="primary-switch">
-                                <input type="checkbox" id="primary-switch" checked>
-                                <label for="primary-switch"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>03. Confirm Color Switch</p>
-                            <div class="confirm-switch">
-                                <input type="checkbox" id="confirm-switch" checked>
-                                <label for="confirm-switch"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-element-widget mt-30">
-                        <h3 class="mb-30">Selectboxes</h3>
-                        <div class="default-select" id="default-select"">
-										<select>
-											<option value=" 1">English</option>
-                            <option value="1">Spanish</option>
-                            <option value="1">Arabic</option>
-                            <option value="1">Portuguise</option>
-                            <option value="1">Bengali</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="single-element-widget mt-30">
-                        <h3 class="mb-30">Checkboxes</h3>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>01. Sample Checkbox</p>
-                            <div class="primary-checkbox">
-                                <input type="checkbox" id="default-checkbox">
-                                <label for="default-checkbox"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>02. Primary Color Checkbox</p>
-                            <div class="primary-checkbox">
-                                <input type="checkbox" id="primary-checkbox" checked>
-                                <label for="primary-checkbox"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>03. Confirm Color Checkbox</p>
-                            <div class="confirm-checkbox">
-                                <input type="checkbox" id="confirm-checkbox">
-                                <label for="confirm-checkbox"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>04. Disabled Checkbox</p>
-                            <div class="disabled-checkbox">
-                                <input type="checkbox" id="disabled-checkbox" disabled>
-                                <label for="disabled-checkbox"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>05. Disabled Checkbox active</p>
-                            <div class="disabled-checkbox">
-                                <input type="checkbox" id="disabled-checkbox-active" checked disabled>
-                                <label for="disabled-checkbox-active"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-element-widget mt-30">
-                        <h3 class="mb-30">Radios</h3>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>01. Sample radio</p>
-                            <div class="primary-radio">
-                                <input type="checkbox" id="default-radio">
-                                <label for="default-radio"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>02. Primary Color radio</p>
-                            <div class="primary-radio">
-                                <input type="checkbox" id="primary-radio" checked>
-                                <label for="primary-radio"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>03. Confirm Color radio</p>
-                            <div class="confirm-radio">
-                                <input type="checkbox" id="confirm-radio" checked>
-                                <label for="confirm-radio"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>04. Disabled radio</p>
-                            <div class="disabled-radio">
-                                <input type="checkbox" id="disabled-radio" disabled>
-                                <label for="disabled-radio"></label>
-                            </div>
-                        </div>
-                        <div class="switch-wrap d-flex justify-content-between">
-                            <p>05. Disabled radio active</p>
-                            <div class="disabled-radio">
-                                <input type="checkbox" id="disabled-radio-active" checked disabled>
-                                <label for="disabled-radio-active"></label>
-                            </div>
-                        </div>
+                        <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">4</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
 @section('footer')
 <script>
     $(document).ready(function() {
         $('audio').audioPlayer();
 
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-caret-down"></span>'
+        $('#music_link').focus(function() {
+            if ($('#music_link').css('color') == "rgb(255, 0, 0)") {
+                $('#music_link').val('')
+                $('#music_link').css('color', 'black');
             }
         });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-caret-down"></span>'
-            }
 
+        $('.change_music').click(function() {
+            var link = $('#music_link').val();
+            $.ajax({
+                url: '/zingMp3_post',
+                type: 'post',
+                data: {
+                    link: link,
+                    auto_play: $('#auto_play').val(),
+                    loop: $('#loop').val(),
+                },
+                error: function(err) {
+                    console.log(err);
+                    $('#music_link').val('Invalid URL!')
+                    $('#music_link').css('color', 'red');
+                },
+                success: function(data) {
+                    console.log(data);
+                    location.reload();
+                }
+            });
+        });
+
+        $('.change_password').click(function() {
+            $('#status_label').css('display', 'none');
+            $('#status_label').removeClass('success_message');
+            $('#status_label').addClass('error_message');
+
+            var old_password = $('#old_password').val();
+            var new_password = $('#new_password').val();
+            var confirm_password = $('#confirm_password').val();
+            if (old_password.length == 0) {
+                $('#status_label').text('Old Password is required');
+                $('#status_label').css('display', 'block');
+            } else if (new_password.length == 0) {
+                $('#status_label').text('New Password is required');
+                $('#status_label').css('display', 'block');
+            } else if (confirm_password.length == 0) {
+                $('#status_label').text('Confirm Password is required');
+                $('#status_label').css('display', 'block');
+            } else if (new_password !== confirm_password) {
+                $('#status_label').text('New Password and Confirm Password do not match!');
+                $('#status_label').css('display', 'block');
+            } else {
+                $.ajax({
+                    url: '/change_password_post',
+                    type: 'post',
+                    data: {
+                        old_password: old_password,
+                        new_password: new_password,
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data == 0) {
+                            $('#status_label').text('Old password is wrong. Please try again!');
+                            $('#status_label').css('display', 'block');
+                            $('#old_password').val('');
+                        } else {
+                            $('#status_label').removeClass('error_message');
+                            $('#status_label').addClass('success_message');
+                            $('#status_label').text('Password changed successfully!');
+                            $('#status_label').css('display', 'block');
+
+                            $('#old_password').val('');
+                            $('#new_password').val('');
+                            $('#confirm_password').val('');
+                        }
+                    }
+                });
+            }
+        });
+
+        $('.change_infomation').click(function() {
+            $('#infomation_status').css('display', 'none');
+            $('#infomation_status').removeClass('success_message');
+            $('#infomation_status').addClass('error_message');
+
+            var username = $('#username').val();
+            var name = $('#name').val();
+            if (username.length == 0) {
+                $('#infomation_status').text('Username is required');
+                $('#infomation_status').css('display', 'block');
+            } else if (name.length == 0) {
+                $('#infomation_status').text('Name is required');
+                $('#infomation_status').css('display', 'block');
+            } else {
+                $.ajax({
+                    url: '/change_infomation_post',
+                    type: 'post',
+                    data: {
+                        username: username,
+                        name: name,
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data == 0) {
+                            $('#infomation_status').text('This username already in use. Please choose another username!');
+                            $('#infomation_status').css('display', 'block');
+                        } else {
+                            $('#infomation_status').removeClass('error_message');
+                            $('#infomation_status').addClass('success_message');
+                            $('#infomation_status').text('Information change successful!');
+                            $('#infomation_status').css('display', 'block');
+                            $('#username').attr('disabled', 'true');
+
+                            setTimeout(function() {
+                                location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            }
+        });
+
+        $('.eye_old_password').mousedown(function() {
+            $(this).find('i').removeClass('fa-eye-slash');
+            $(this).find('i').addClass('fa-eye');
+            $('#old_password').attr('type', 'text');
+        });
+
+        $('.eye_old_password').mouseup(function() {
+            $(this).find('i').removeClass('fa-eye');
+            $(this).find('i').addClass('fa-eye-slash');
+            $('#old_password').attr('type', 'password');
+        });
+
+        $('.eye_new_password').mousedown(function() {
+            $(this).find('i').removeClass('fa-eye-slash');
+            $(this).find('i').addClass('fa-eye');
+            $('#new_password').attr('type', 'text');
+        });
+
+        $('.eye_new_password').mouseup(function() {
+            $(this).find('i').removeClass('fa-eye');
+            $(this).find('i').addClass('fa-eye-slash');
+            $('#new_password').attr('type', 'password');
+        });
+
+        $('.eye_confirm_password').mousedown(function() {
+            $(this).find('i').removeClass('fa-eye-slash');
+            $(this).find('i').addClass('fa-eye');
+            $('#confirm_password').attr('type', 'text');
+        });
+
+        $('.eye_confirm_password').mouseup(function() {
+            $(this).find('i').removeClass('fa-eye');
+            $(this).find('i').addClass('fa-eye-slash');
+            $('#confirm_password').attr('type', 'password');
         });
     });
 </script>

@@ -11,9 +11,15 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::post('/image/upload', 'AuthController@uploadImage')->name('');
 Route::post('/image/delete', 'AuthController@deleteImage')->name('');
 Route::get('/account', 'AuthController@getAccount');
+Route::post('/zingMp3_post', 'AuthController@zingMp3_post');
+Route::post('/change_password_post', 'AuthController@change_password_post');
+Route::post('/change_infomation_post', 'AuthController@change_infomation_post');
+Route::get('/test', 'AuthController@test');
 
 Route::get('/', 'HomeController@index');
 
@@ -52,11 +58,19 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/', 'AdminController@add_post')->name('post');
             Route::post('/', 'AdminController@add_postP')->name('post');
         });
-        Route::group(['prefix' => '{id}/edit'], function () {
-            Route::get('/', 'AdminController@edit_post')->name('post');
-            Route::post('/', 'AdminController@edit_postP')->name('post');
+        Route::group(['prefix' => '{id}'], function () {
+            Route::group(['prefix' => 'edit'], function () {
+                Route::get('/', 'AdminController@edit_post')->name('post');
+                Route::post('/', 'AdminController@edit_postP')->name('post');
+            });
+            Route::post('change_status', 'AdminController@change_status');
         });
         Route::post('/delete', 'AdminController@delete_postP')->name('post');
+    });
+
+    Route::group(['prefix' => 'setting'], function () {
+        Route::get('/', 'AdminController@setting')->name('setting');
+        Route::post('/', 'AdminController@settingPOST')->name('setting');
     });
 });
 
@@ -93,5 +107,11 @@ Route::group(['prefix' => 'auth'], function () {
 Route::group(['prefix' => 'category'], function () {
     Route::group(['prefix' => '{category_slug}'], function () {
         Route::get('/', 'HomeController@getCategory')->name('');
+    });
+});
+
+Route::group(['prefix' => 'post'], function () {
+    Route::group(['prefix' => '{post_slug}'], function () {
+        Route::get('/', 'HomeController@getPost')->name('');
     });
 });

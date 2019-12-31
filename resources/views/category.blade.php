@@ -1,10 +1,10 @@
 @extends('layouts.page')
-
 @section('header')
+
 @endsection
 @section('body')
 
-<div class="bradcam_area breadcam_bg_2">
+<div class="bradcam_area" style="background-image: url('{{$background->value}}')">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -19,14 +19,17 @@
 <section class="blog_area section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mb-5 mb-lg-0">
+            <div class="col-lg-12 mb-5 mb-lg-0">
                 <div class="blog_left_sidebar">
 
+                    @if(count($posts) > 0)
                     @foreach($posts as $post)
                     <article class="blog_item">
                         <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="{{$post->cover}}" alt="">
-                            <a href="#" class="blog_item_date">
+                            <a href="/post/{{$post->slug}}">
+                                <img class="card-img rounded-0" src="{{$post->cover}}" alt="">
+                            </a>
+                            <a href="/post/{{$post->slug}}" class="blog_item_date">
                                 <h3>{{$post->day_created}}</h3>
                                 <p>{{$post->Month_created}}</p>
                             </a>
@@ -36,39 +39,57 @@
                             <a class="d-inline-block" href="/post/{{$post->slug}}">
                                 <h2>{{$post->name}}</h2>
                             </a>
-                            <p>That dominion stars lights dominion divide years for fourth have don't stars is that
+                            <!-- <p>That dominion stars lights dominion divide years for fourth have don't stars is that
                                 he earth it first without heaven in place seed it second morning saying.</p>
                             <ul class="blog-info-link">
                                 <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                 <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </article>
-                    @endforeach
 
+                    @endforeach
                     <nav class="blog-pagination justify-content-center d-flex">
                         <ul class="pagination">
+                            @if($currPage > 1)
                             <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
+                                <a href="{{$currUrl}}?page={{$previousPage}}" class="page-link" aria-label="Previous">
                                     <i class="ti-angle-left"></i>
                                 </a>
                             </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">1</a>
+                            @endif
+
+                            @foreach($listPages as $page)
+                            @if($page!= '...')
+                            <li class="page-item {{($page==$currPage) ? 'active':''}}">
+                                <a href="{{$currUrl}}?page={{$page}}" class="page-link">{{$page}}</a>
                             </li>
-                            <li class="page-item active">
-                                <a href="#" class="page-link">2</a>
-                            </li>
+                            @else
                             <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
+                                <a class="page-link">{{$page}}</a>
+                            </li>
+                            @endif
+                            @endforeach
+
+                            @if($currPage < $totalPage)
+                            <li class="page-item">
+                                <a href="{{$currUrl}}?page={{$nextPage}}" class="page-link" aria-label="Next">
                                     <i class="ti-angle-right"></i>
                                 </a>
                             </li>
+                            @endif
                         </ul>
                     </nav>
+                    @else
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <h1>
+                            Empty Category
+                        </h1>
+                    </nav>
+                    @endif
                 </div>
             </div>
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget">
                         <form action="#">
@@ -241,7 +262,7 @@
                         </form>
                     </aside>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -250,19 +271,7 @@
 @section('footer')
 <script>
     $(document).ready(function() {
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-caret-down"></span>'
-            }
-        });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-                rightIcon: '<span class="fa fa-caret-down"></span>'
-            }
 
-        });
     });
 </script>
 @endsection
