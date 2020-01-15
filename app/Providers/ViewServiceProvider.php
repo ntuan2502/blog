@@ -46,6 +46,12 @@ class ViewServiceProvider extends ServiceProvider
                 $vsp_discord->name = 'discord';
                 $vsp_discord->save();
             }
+            $vsp_background = Setting::where('name', 'background')->first();
+            if (!$vsp_background) {
+                $vsp_background = new Setting;
+                $vsp_background->name = 'background';
+                $vsp_background->save();
+            }
 
             #region
 
@@ -85,12 +91,6 @@ class ViewServiceProvider extends ServiceProvider
                 $mod_64bit->name = 'mod_64bit';
                 $mod_64bit->save();
             }
-            $background = Setting::where('name', 'background')->first();
-            if (!$background) {
-                $background = new Setting;
-                $background->name = 'background';
-                $background->save();
-            }
 
             #endregion
 
@@ -106,6 +106,7 @@ class ViewServiceProvider extends ServiceProvider
                     'vsp_facebook' => $vsp_facebook,
                     'vsp_youtube' => $vsp_youtube,
                     'vsp_discord' => $vsp_discord,
+                    'vsp_background' => $vsp_background,
                 ]);
             } else {
                 $view->with([
@@ -115,6 +116,7 @@ class ViewServiceProvider extends ServiceProvider
                     'vsp_facebook' => $vsp_facebook,
                     'vsp_youtube' => $vsp_youtube,
                     'vsp_discord' => $vsp_discord,
+                    'vsp_background' => $vsp_background,
                 ]);
             }
         });

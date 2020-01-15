@@ -20,6 +20,12 @@
         z-index: 1;
     }
 </style>
+<title>Blade and Soul VN</title>
+<meta property="og:url" content="{{URL::current()}}" />
+<meta property="og:type" content="Website" />
+<meta property="og:title" content="Blade & Soul Việt Nam" />
+<meta property="og:description" content="Blade & Soul Việt Nam" />
+<meta property="og:image" content="{{asset($background->value)}}" />
 @endsection
 @section('body')
 

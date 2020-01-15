@@ -1,6 +1,6 @@
 @extends('layouts.page')
 @section('header')
-
+<title>{{$category->name}}</title>
 @endsection
 @section('body')
 

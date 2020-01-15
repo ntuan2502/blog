@@ -117,6 +117,7 @@
         display: none;
     }
 </style>
+<title>Tài khoản</title>
 @endsection
 @section('body')
 

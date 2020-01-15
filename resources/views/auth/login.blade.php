@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<title>Login V18</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="{{asset('public/login/images/icons/favicon.ico')}}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Đăng nhập</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset('public/logo.png')}}">
 	<link rel="stylesheet" href="{{asset('public/login/vendor/bootstrap/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="{{asset('public/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 	<link rel="stylesheet" href="{{asset('public/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
@@ -76,7 +77,7 @@
 						</a> -->
 					</div>
 				</form>
-				<div class="login100-more" style="background-image: url({{asset('public/login/images/bg-01.jpg')}});">
+				<div class="login100-more" style="background-image: url({{$vsp_background->value}})">
 				</div>
 			</div>
 		</div>

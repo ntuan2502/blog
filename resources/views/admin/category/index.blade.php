@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-<title>INSPINIA | Danh sách chuyên mục</title>
+<title>Danh sách chuyên mục</title>
 @endsection
 @section('body')
 <div class="row wrapper border-bottom white-bg page-heading">
