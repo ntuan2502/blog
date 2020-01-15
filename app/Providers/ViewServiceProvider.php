@@ -46,12 +46,6 @@ class ViewServiceProvider extends ServiceProvider
                 $vsp_discord->name = 'discord';
                 $vsp_discord->save();
             }
-            $vsp_messenger = Setting::where('name', 'messenger')->first();
-            if (!$vsp_messenger) {
-                $vsp_messenger = new Setting;
-                $vsp_messenger->name = 'messenger';
-                $vsp_messenger->save();
-            }
 
             #region
 
@@ -112,7 +106,6 @@ class ViewServiceProvider extends ServiceProvider
                     'vsp_facebook' => $vsp_facebook,
                     'vsp_youtube' => $vsp_youtube,
                     'vsp_discord' => $vsp_discord,
-                    'vsp_messenger' => $vsp_messenger,
                 ]);
             } else {
                 $view->with([
@@ -122,7 +115,6 @@ class ViewServiceProvider extends ServiceProvider
                     'vsp_facebook' => $vsp_facebook,
                     'vsp_youtube' => $vsp_youtube,
                     'vsp_discord' => $vsp_discord,
-                    'vsp_messenger' => $vsp_messenger,
                 ]);
             }
         });

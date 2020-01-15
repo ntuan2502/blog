@@ -68,10 +68,10 @@
 					</div>
 
 					<div class="login100-form-social flex-c-m">
-						<a href="/auth/facebook" class="login100-form-social-item flex-c-m bg1 m-r-5">
+						<a href="/login/facebook" class="login100-form-social-item flex-c-m bg1 m-r-5">
 							<i class="fa fa-facebook-f" aria-hidden="true"></i>
 						</a>
-						<!-- <a href="/auth/google" class="login100-form-social-item flex-c-m bg2 m-r-5">
+						<!-- <a href="/login/google" class="login100-form-social-item flex-c-m bg2 m-r-5">
 							<i class="fa fa-google" aria-hidden="true"></i>
 						</a> -->
 					</div>

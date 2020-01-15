@@ -113,6 +113,13 @@
                             <!-- <span class="float-right label label-primary">SPECIAL</span> -->
                         </a>
                     </li>
+                    <li class="{{ (Route::currentRouteName() == 'user' ? 'active' : '') }}">
+                        <a href="/admin/user">
+                            <i class="fa fa-gear"></i>
+                            <span class="nav-label">Người dùng</span>
+                            <!-- <span class="float-right label label-primary">SPECIAL</span> -->
+                        </a>
+                    </li>
                 </ul>
 
             </div>
@@ -286,6 +293,10 @@
     <script src="{{ asset('public/admin/js/plugins/sweetalert/sweetalert.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/select2/select2.full.min.js')}}"></script>
     <script src="{{ asset('public/admin/js/plugins/summernote/summernote-bs4.js')}}"></script>
+
+    <script src="{{ asset('public/admin/js/plugins/dataTables/datatables.min.js')}}"></script>
+    <script src="{{ asset('public/admin/js/plugins/dataTables/dataTables.bootstrap4.min.js')}}"></script>
+
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="{{ asset('public/link.js')}}"></script>
     <script>
@@ -348,6 +359,9 @@
                 $.ajax({
                     url: '/logout',
                     type: 'post',
+                    data: {
+                        url: window.location.pathname
+                    },
                     error: function(err) {
                         console.log(err);
                     },

@@ -40,9 +40,15 @@
                 @if($vsp_user)
                 <div class="col-xl-12">
                     <div class="slider_text text-center ">
+                        @if($download->value == 'on')
                         <a class="pointer" data-toggle="modal" data-target="#download_Mod">
                             <h3>Tải mod</h3>
                         </a>
+                        @else
+                        <a class="pointer">
+                            <h3>Đang cập nhật...</h3>
+                        </a>
+                        @endif
                     </div>
                 </div>
                 @else
@@ -122,7 +128,7 @@
                     <article class="blog_item">
                         <div class="blog_item_img">
                             <a href="/post/{{$post->slug}}">
-                                <img class="card-img rounded-0" src="{{$post->cover}}" alt="">
+                                <img class="card-img rounded-0" src="/{{$post->cover}}" alt="">
                             </a>
                             <a href="/post/{{$post->slug}}" class="blog_item_date">
                                 <h3>{{$post->day_created}}</h3>

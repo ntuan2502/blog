@@ -18,31 +18,24 @@ class UserSocialController extends Controller
 {
     public function redirectToProvider($provider)
     {
-        if (!Session::has('pre_url')) {
-            Session::put('pre_url', URL::previous());
-        } else {
-            if (URL::previous() != URL::to('login')) Session::put('pre_url', URL::previous());
-        }
         return Socialite::driver($provider)->redirect();
     }
 
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
-
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser);
-        return Redirect::to(Session::get('pre_url'));
+        return redirect('/#');
     }
 
     public function findOrCreateUser($user, $provider)
     {
-        $find = [
+
+        $account = UserSocial::where([
             'provider_id' => $user->id,
             'provider' => $provider,
-        ];
-
-        $account = UserSocial::where($find)->first();
+        ])->first();
 
         if ($account) {
             $account->user->avatar = $user->avatar;
@@ -60,24 +53,19 @@ class UserSocialController extends Controller
 
             $authUser = User::where('email', $user->email)->first();
 
-            if (!$authUser) {
+            if ($authUser) {
+                $authUser->avatar = $user->avatar;
+                $authUser->updated_at = Carbon::now();
+                $authUser->save();
+            } else {
                 $authUser = new User;
                 $authUser->email = $user->email;
                 $authUser->name = $user->name;
                 $authUser->password = bcrypt($user->email);
                 $authUser->avatar = $user->avatar;
                 $authUser->save();
-
-                $this->checkMusic($authUser->id);
-
-            } else {
-                $authUser->avatar = $user->avatar;
-                $authUser->updated_at = Carbon::now();
-                $authUser->save();
-
-                $this->checkMusic($authUser->id);
-
             }
+            $this->checkMusic($authUser->id);
 
             $account->user()->associate($authUser);
             $account->save();
@@ -86,28 +74,29 @@ class UserSocialController extends Controller
         }
     }
 
-    public function checkMusic($user_id){
+    public function checkMusic($user_id)
+    {
         $music = Music::where('user_id', $user_id)->first();
-            if ($music) {
-                $json = ZingMp3::getInfo($music->link);
+        if ($music) {
+            $json = ZingMp3::getInfo($music->link);
 
-                $music->title = $json->title;
-                $music->artist = $json->artist;
-                $music->audio = $json->audio;
-                $music->save();
-            } else {
-                $music = new Music();
-                $music->user_id = $user_id;
+            $music->title = $json->title;
+            $music->artist = $json->artist;
+            $music->audio = $json->audio;
+            $music->save();
+        } else {
+            $music = new Music();
+            $music->user_id = $user_id;
 
-                // $link = 'https://zingmp3.vn/bai-hat/Kiss-The-Rain-Yiruma/ZWZD909W.html';
-                $link = 'https://zingmp3.vn/bai-hat/Happy-New-Year-A-Teens/ZW6I60C9.html';
-                $json = ZingMp3::getInfo($link);
+            // $link = 'https://zingmp3.vn/bai-hat/Kiss-The-Rain-Yiruma/ZWZD909W.html';
+            $link = 'https://zingmp3.vn/bai-hat/Happy-New-Year-A-Teens/ZW6I60C9.html';
+            $json = ZingMp3::getInfo($link);
 
-                $music->link = $json->link;
-                $music->title = $json->title;
-                $music->artist = $json->artist;
-                $music->audio = $json->audio;
-                $music->save();
-            }
+            $music->link = $json->link;
+            $music->title = $json->title;
+            $music->artist = $json->artist;
+            $music->audio = $json->audio;
+            $music->save();
+        }
     }
 }

@@ -27,7 +27,7 @@
                     <article class="blog_item">
                         <div class="blog_item_img">
                             <a href="/post/{{$post->slug}}">
-                                <img class="card-img rounded-0" src="{{$post->cover}}" alt="">
+                                <img class="card-img rounded-0" src="/{{$post->cover}}" alt="">
                             </a>
                             <a href="/post/{{$post->slug}}" class="blog_item_date">
                                 <h3>{{$post->day_created}}</h3>

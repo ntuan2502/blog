@@ -23,6 +23,7 @@ class HomeController extends Controller
         $version = Setting::where('name', 'version')->first();
         $mod_32bit = Setting::where('name', 'mod_32bit')->first();
         $mod_64bit = Setting::where('name', 'mod_64bit')->first();
+        $download = Setting::where('name', 'download')->first();
         $posts = Post::where('status', 1);
         $page = $request->query('page') ? $request->query('page') : 1;
         $number = $posts->count();
@@ -47,6 +48,7 @@ class HomeController extends Controller
             'version' => $version,
             'mod_32bit' => $mod_32bit,
             'mod_64bit' => $mod_64bit,
+            'download' => $download,
             'posts' => $posts,
             'fullUrl' => $fullUrl,
             'currUrl' => $currUrl,

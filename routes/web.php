@@ -72,11 +72,20 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/', 'AdminController@setting')->name('setting');
         Route::post('/', 'AdminController@settingPOST')->name('setting');
     });
+
+    Route::get('/user', 'AdminController@user')->name('user');
 });
 
 Route::group(['prefix' => 'login'], function () {
     Route::get('/', 'HomeController@login')->name('login');
     Route::post('/', 'HomeController@loginP')->name('login');
+
+    //Social Login
+    
+    Route::group(['prefix' => '{provider}'], function () {
+        Route::get('/', 'UserSocialController@redirectToProvider')->name('');
+        Route::get('/callback', 'UserSocialController@handleProviderCallback')->name('');
+    });
 });
 
 Route::post('/page_login', 'HomeController@page_loginP');
@@ -96,21 +105,25 @@ Route::group(['prefix' => 'forgotPassword'], function () {
     Route::post('/', 'HomeController@forgotPasswordP')->name('forgotPassword');
 });
 
-//Social Login
-Route::group(['prefix' => 'auth'], function () {
-    Route::group(['prefix' => '{provider}'], function () {
-        Route::get('/', 'UserSocialController@redirectToProvider')->name('');
-        Route::get('/callback', 'UserSocialController@handleProviderCallback')->name('');
-    });
-});
-
 Route::group(['prefix' => 'category'], function () {
     Route::group(['prefix' => '{category_slug}'], function () {
         Route::get('/', 'HomeController@getCategory')->name('');
     });
 });
 
+Route::group(['prefix' => 'chuyen-muc'], function () {
+    Route::group(['prefix' => '{category_slug}'], function () {
+        Route::get('/', 'HomeController@getCategory')->name('');
+    });
+});
+
 Route::group(['prefix' => 'post'], function () {
+    Route::group(['prefix' => '{post_slug}'], function () {
+        Route::get('/', 'HomeController@getPost')->name('');
+    });
+});
+
+Route::group(['prefix' => 'bai-viet'], function () {
     Route::group(['prefix' => '{post_slug}'], function () {
         Route::get('/', 'HomeController@getPost')->name('');
     });

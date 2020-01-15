@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => env('TIME_ZONE', 'UTC'),
+    'timezone' => env('TIME_ZONE', 'Asia/Ho_Chi_Minh'),
 
     /*
     |--------------------------------------------------------------------------
@@ -228,7 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 
 ];

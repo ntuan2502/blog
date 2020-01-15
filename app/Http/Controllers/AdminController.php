@@ -379,4 +379,12 @@ class AdminController extends Controller
             'success' => 'Cập nhật setting thành công!',
         ]);
     }
+
+    public function user()
+    {
+        $users = User::all();
+        return view('admin.user.index')->with([
+            'users' => $users
+        ]);
+    }
 }
