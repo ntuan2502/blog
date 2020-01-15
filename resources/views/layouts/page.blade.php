@@ -48,33 +48,33 @@
                     Coming Soon
                 </h3>
 
-                <!-- <div class="flex-w flex-c cd100 respon2">
+                <div class="flex-w flex-c cd100 respon2">
                     <div class="flex-col-c wsize1 m-b-30">
-                        <span class="l1-txt2 p-b-37 days">35</span>
+                        <span class="l1-txt2 p-b-37 days"></span>
                         <span class="m1-txt2 p-r-20">Days</span>
                     </div>
-    
+
                     <span class="l1-txt2 p-t-15 dis-none-sm">:</span>
-    
+
                     <div class="flex-col-c wsize1 m-b-30">
-                        <span class="l1-txt2 p-b-37 hours">17</span>
+                        <span class="l1-txt2 p-b-37 hours"></span>
                         <span class="m1-txt2 p-r-20">Hr</span>
                     </div>
-    
+
                     <span class="l1-txt2 p-t-15 dis-none-lg">:</span>
-    
+
                     <div class="flex-col-c wsize1 m-b-30">
-                        <span class="l1-txt2 p-b-37 minutes">50</span>
+                        <span class="l1-txt2 p-b-37 minutes"></span>
                         <span class="m1-txt2 p-r-20">Min</span>
                     </div>
-    
+
                     <span class="l1-txt2 p-t-15 dis-none-sm">:</span>
-    
+
                     <div class="flex-col-c wsize1 m-b-30">
-                        <span class="l1-txt2 p-b-37 seconds">39</span>
+                        <span class="l1-txt2 p-b-37 seconds"></span>
                         <span class="m1-txt2 p-r-20">Sec</span>
                     </div>
-                </div> -->
+                </div>
             </div>
 
             <div class="flex-w flex-c-m p-b-35">
@@ -105,19 +105,42 @@
         <script src="{{asset('public/comingsoon/vendor/countdowntime/moment-timezone-with-data.min.js')}}"></script>
         <script src="{{asset('public/comingsoon/vendor/countdowntime/countdowntime.js')}}"></script>
         <script>
-            $('.cd100').countdown100({
-                /*Set Endtime here*/
-                /*Endtime must be > current time*/
-                endtimeYear: 0,
-                endtimeMonth: 0,
-                endtimeDate: 35,
-                endtimeHours: 19,
-                endtimeMinutes: 0,
-                endtimeSeconds: 0,
-                timeZone: ""
-                // ex:  timeZone: "America/New_York"
-                //go to " http://momentjs.com/timezone/ " to get timezone
-            });
+            function makeTimer() {
+
+                var endTime = new Date("15 January 2020 21:00:00 GMT+07:00");
+                endTime = (Date.parse(endTime) / 1000);
+
+                var now = new Date();
+                now = (Date.parse(now) / 1000);
+
+                var timeLeft = endTime - now;
+
+                var days = Math.floor(timeLeft / 86400);
+                var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+                var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600)) / 60);
+                var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+                if (hours < "10") {
+                    hours = "0" + hours;
+                }
+                if (minutes < "10") {
+                    minutes = "0" + minutes;
+                }
+                if (seconds < "10") {
+                    seconds = "0" + seconds;
+                }
+
+                $(".days").html(days);
+                $(".hours").html(hours);
+                $(".minutes").html(minutes);
+                $(".seconds").html(seconds);
+
+            }
+
+            setInterval(function() {
+                makeTimer();
+            }, 1000);
+
         </script>
         <script src="{{asset('public/comingsoon/vendor/tilt/tilt.jquery.min.js')}}"></script>
         <script>
